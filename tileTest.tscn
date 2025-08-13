@@ -1,0 +1,201 @@
+[gd_scene load_steps=12 format=3 uid="uid://bq5u0drpho201"]
+
+[ext_resource type="Texture2D" uid="uid://ek22tfl6dl44" path="res://sprites/world_tileset.png" id="1_stgeq"]
+[ext_resource type="Script" uid="uid://dci7aa22urrib" path="res://character_body_2d.gd" id="2_6l31h"]
+[ext_resource type="Texture2D" uid="uid://yj6a7frufwod" path="res://sprites/knight.png" id="3_b45jg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nj6id"]
+texture = ExtResource("1_stgeq")
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+4:1/0 = 0
+4:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:0/0 = 0
+2:3/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+4:5/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+11:1/0 = 0
+10:1/0 = 0
+10:2/0 = 0
+9:2/0 = 0
+11:2/0 = 0
+9:3/0 = 0
+8:3/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+8:5/0 = 0
+8:6/0 = 0
+8:7/0 = 0
+8:8/0 = 0
+7:8/0 = 0
+6:9/0 = 0
+6:10/0 = 0
+5:9/0 = 0
+7:9/0 = 0
+5:11/0 = 0
+0:12/0 = 0
+0:13/0 = 0
+0:15/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+3:15/0 = 0
+5:13/0 = 0
+4:14/0 = 0
+4:13/0 = 0
+3:13/0 = 0
+2:13/0 = 0
+1:13/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6l31h"]
+sources/0 = SubResource("TileSetAtlasSource_nj6id")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8uots"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbr7j"]
+atlas = ExtResource("3_b45jg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s766h"]
+atlas = ExtResource("3_b45jg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5t7h2"]
+atlas = ExtResource("3_b45jg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwh0i"]
+atlas = ExtResource("3_b45jg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nbu5r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbr7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s766h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5t7h2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwh0i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_6l31h")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, 65536, 0, 1, 65537, 0, 1, 65538, 0, 1, 0, 0, 1, 1, 0, 1, 2, 0, 2, 3, 0, 1, 4, 0, 1, 5, 0, 1, 6, 0, 1, 7, 0, 1, 8, 0, 1, 9, 0, 1, 10, 0, 1, 11, 0, 1, 12, 0, 1, 13, 0, 1, 14, 0, 1, 15, 0, 1, 16, 0, 1, 17, 0, 1, 65553, 0, 2, 65552, 0, 1, 65551, 0, 1, 65550, 0, 1, 65549, 0, 1, 65548, 0, 1, 65547, 0, 1, 65546, 0, 1, 65545, 0, 1, 65544, 0, 2, 65543, 0, 1, 65542, 0, 1, 65541, 0, 1, 65540, 65536, 1, 65539, 0, 1, 131074, 0, 1, 131073, 0, 1, 131072, 0, 2, 131075, 0, 1, 131076, 0, 2, 131077, 0, 1, 131078, 0, 1, 196614, 0, 1, 196615, 0, 2, 196616, 0, 1, 196617, 65536, 1, 196618, 0, 1, 196619, 0, 1, 131083, 0, 1, 131084, 0, 1, 131085, 0, 2, 131086, 0, 1, 131087, 0, 1, 131088, 0, 1, 131089, 0, 1, 131090, 0, 1, 131081, 0, 1, 131080, 0, 1, 131079, 0, 1, 131082, 0, 1, 196626, 0, 1, 196625, 0, 1, 196624, 0, 1, 196623, 0, 1, 196622, 0, 1, 196621, 0, 1, 196620, 0, 1, 196613, 65536, 1, 196612, 0, 1, 196611, 0, 1, 196610, 0, 2, 196609, 0, 2, 196608, 0, 2, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, 18, 0, 1, 65554, 0, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_6l31h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(29, -49)
+shape = SubResource("CircleShape2D_8uots")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(29, -52)
+sprite_frames = SubResource("SpriteFrames_nbu5r")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.185068
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
