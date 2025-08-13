@@ -24,11 +24,8 @@ shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0, 1, 1, 1)
-polygon = PackedVector2Array(566, 167, 557, 289, 693, 266)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(3, 119)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(271.5, 467.5)
@@ -40,28 +37,80 @@ position = Vector2(266, 467)
 scale = Vector2(4.125, 1)
 texture = ExtResource("1_ig7tw")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(508, 0)
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D"]
+position = Vector2(530, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D"]
 position = Vector2(271.5, 467.5)
 scale = Vector2(4.125, 1)
 shape = SubResource("RectangleShape2D_ig7tw")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/StaticBody2D"]
 position = Vector2(266, 467)
 scale = Vector2(4.125, 1)
 texture = ExtResource("1_ig7tw")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(1021, -1)
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/StaticBody2D"]
+position = Vector2(532, 5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D/StaticBody2D"]
 position = Vector2(271.5, 467.5)
 scale = Vector2(4.125, 1)
 shape = SubResource("RectangleShape2D_ig7tw")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/StaticBody2D/StaticBody2D"]
+position = Vector2(266, 467)
+scale = Vector2(4.125, 1)
+texture = ExtResource("1_ig7tw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D"]
+position = Vector2(543, 278)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
+position = Vector2(271.5, 467.5)
+scale = Vector2(4.125, 1)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
+position = Vector2(266, 467)
+scale = Vector2(4.125, 1)
+texture = ExtResource("1_ig7tw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
+position = Vector2(657, -302)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
+position = Vector2(271.5, 467.5)
+scale = Vector2(4.125, 1)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
+position = Vector2(266, 467)
+scale = Vector2(4.125, 1)
+texture = ExtResource("1_ig7tw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
+position = Vector2(688, -245)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
+position = Vector2(271.5, 467.5)
+scale = Vector2(4.125, 1)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
+position = Vector2(266, 467)
+scale = Vector2(4.125, 1)
+texture = ExtResource("1_ig7tw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
+position = Vector2(-693, -393)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
+position = Vector2(271.5, 467.5)
+scale = Vector2(4.125, 1)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D/StaticBody2D"]
 position = Vector2(266, 467)
 scale = Vector2(4.125, 1)
 texture = ExtResource("1_ig7tw")
