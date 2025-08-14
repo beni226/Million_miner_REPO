@@ -28,5 +28,16 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	#Digging action comand
+	
+	if Input.is_action_just_pressed("Dig"):
+		dig()
 
 	move_and_slide()
+	#Digging action script
+func dig():
+	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
+	var local_pos = tilemap.to_local(global_position)
+	var cell = tilemap.local_to_map(local_pos + Vector2(25,35)) # Offset to dig below player
+	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
