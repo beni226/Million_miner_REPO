@@ -3,7 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -200.0
-
+var jump_count = 0
+const MAX_JUMPS = 2
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -15,6 +16,12 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	if (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_up")):
+		if jump_count < MAX_JUMPS:
+			velocity.y = JUMP_VELOCITY
+			jump_count += 1	
+		if is_on_floor():
+			jump_count = 0
 		
 	if Input.is_action_pressed("ui_down") and is_on_floor():
 		$AnimatedSprite2D.play("crouch")
@@ -41,3 +48,4 @@ func dig():
 	var local_pos = tilemap.to_local(global_position)
 	var cell = tilemap.local_to_map(local_pos + Vector2(25,-35)) # Offset to dig below player
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+	tilemap.set_cell(1,cell,-1)
