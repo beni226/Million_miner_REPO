@@ -265,5 +265,6 @@ autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(29, -47)
+scale = Vector2(1.02126, 1.22838)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
