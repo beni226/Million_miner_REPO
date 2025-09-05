@@ -1,12 +1,15 @@
+class_name Player
 extends CharacterBody2D
-
+var tile_test
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -200.0
 var jump_count = 0
 const MAX_JUMPS = 2
+var can_control : bool = true
 
 func _physics_process(delta: float) -> void:
+	if not can_control: return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -66,3 +69,18 @@ func dig3():
 	var cell = tilemap.local_to_map(local_pos + Vector2(47, -27)) # Offset to dig below player
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
 	tilemap.set_cell(1,cell,-1)	
+
+func handel_danger() -> void:
+	print("Player died")
+	visible = false
+	can_control = false
+	
+	await get_tree().create_timer(1).timeout
+	reset_player()
+	
+
+	
+func reset_player() -> void:
+	global_position = Vector2(0,0)
+	visible = true
+	can_control = true

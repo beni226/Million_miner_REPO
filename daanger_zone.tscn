@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://hk2e0q3jkfeb"]
+
+[ext_resource type="Script" uid="uid://dg1602axsawo6" path="res://daanger_zone.gd" id="1_pqe5i"]
+
+[node name="daangerZone" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+script = ExtResource("1_pqe5i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
