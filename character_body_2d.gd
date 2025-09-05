@@ -38,8 +38,13 @@ func _physics_process(delta: float) -> void:
 		
 	#Digging action comand
 	
-	if Input.is_action_just_pressed("Dig"):
+	if Input.is_action_just_pressed("dig"):
 		dig()
+	if Input.is_action_just_pressed("digL"):
+		dig2()
+	if Input.is_action_just_pressed("digR"):
+		dig3()
+	
 
 	move_and_slide()
 	#Digging action script
@@ -49,3 +54,15 @@ func dig():
 	var cell = tilemap.local_to_map(local_pos + Vector2(25,-35)) # Offset to dig below player
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
 	tilemap.set_cell(1,cell,-1)
+func dig2():
+	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
+	var local_pos = tilemap.to_local(global_position)
+	var cell = tilemap.local_to_map(local_pos + Vector2(-27, -15))
+	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+	tilemap.set_cell(1,cell,-1)	
+func dig3():
+	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
+	var local_pos = tilemap.to_local(global_position)
+	var cell = tilemap.local_to_map(local_pos + Vector2(47, -27)) # Offset to dig below player
+	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+	tilemap.set_cell(1,cell,-1)	

@@ -178,7 +178,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nj6id")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6l31h"]
-size = Vector2(13, 17)
+size = Vector2(11, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6l31h"]
 atlas = ExtResource("3_b45jg")
@@ -254,11 +254,11 @@ position = Vector2(-6, -7)
 script = ExtResource("2_6l31h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(28.5, -48.5)
+position = Vector2(28.5, -45.5)
 shape = SubResource("RectangleShape2D_6l31h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(29, -52)
+position = Vector2(29, -49)
 sprite_frames = SubResource("SpriteFrames_nbu5r")
 animation = &"crouch"
 autoplay = "idle"
