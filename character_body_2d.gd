@@ -47,8 +47,7 @@ func _physics_process(delta: float) -> void:
 		dig2()
 	if Input.is_action_just_pressed("digR"):
 		dig3()
-	if Input.is_action_just_pressed("digU"):
-		dig4()
+	
 
 	move_and_slide()
 	#Digging action script
@@ -61,13 +60,13 @@ func dig():
 func dig2():
 	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
 	var local_pos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(local_pos + Vector2(15, -45))
+	var cell = tilemap.local_to_map(local_pos + Vector2(-27, -15))
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
 	tilemap.set_cell(1,cell,-1)	
 func dig3():
 	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
 	var local_pos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(local_pos + Vector2(47, -45)) # Offset to dig below player
+	var cell = tilemap.local_to_map(local_pos + Vector2(47, -27)) # Offset to dig below player
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
 	tilemap.set_cell(1,cell,-1)	
 
@@ -85,9 +84,3 @@ func reset_player() -> void:
 	global_position = Vector2(0,0)
 	visible = true
 	can_control = true
-func dig4():
-	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
-	var local_pos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(local_pos + Vector2(25,-65)) # Offset to dig below player
-	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-	tilemap.set_cell(1,cell,-1)
