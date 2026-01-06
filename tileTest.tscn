@@ -423,5 +423,9 @@ zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(365, 77)
+position = Vector2(203, 259)
+texture = ExtResource("4_b45jg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-140, 218)
 texture = ExtResource("4_b45jg")
