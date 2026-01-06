@@ -25,12 +25,16 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_pressed("ui_down") and is_on_floor():
 		$AnimatedSprite2D.play("crouch")
+	elif Input.is_action_pressed("ui_left"):
+			if $AnimatedSprite2D.animation != "moveL":
+				$AnimatedSprite2D.play("moveL")
+	elif Input.is_action_pressed("ui_right"):
+		if $AnimatedSprite2D.animation != "moveR":
+			$AnimatedSprite2D.play("moveR")
 	else:
 		$AnimatedSprite2D.play("idle")
-	if Input.is_action_pressed("ui_left") and is_on_floor():
-		$AnimatedSprite2D.play("moveL")
-	if Input.is_action_pressed("ui_right") and is_on_floor():
-		$AnimatedSprite2D.play("moveR")
+
+
 
 
 

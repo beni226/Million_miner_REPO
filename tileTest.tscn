@@ -333,7 +333,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"moveL",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -362,7 +362,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"moveR",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -391,7 +391,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"roll",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="Node2D" type="Node2D"]
@@ -414,8 +414,7 @@ position = Vector2(29, -49)
 sprite_frames = SubResource("SpriteFrames_nbu5r")
 animation = &"moveR"
 autoplay = "idle"
-frame_progress = 0.32449
-speed_scale = 3.0
+frame_progress = 0.117872
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(29, -47)
