@@ -27,6 +27,14 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("crouch")
 	else:
 		$AnimatedSprite2D.play("idle")
+	if Input.is_action_pressed("ui_left") and is_on_floor():
+		$AnimatedSprite2D.play("moveL")
+	if Input.is_action_pressed("ui_right") and is_on_floor():
+		$AnimatedSprite2D.play("moveR")
+
+
+
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
