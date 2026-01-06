@@ -27,12 +27,21 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("crouch")
 	elif Input.is_action_pressed("ui_left"):
 			if $AnimatedSprite2D.animation != "moveL":
+				$AnimatedSprite2D.flip_h = true   
 				$AnimatedSprite2D.play("moveL")
 	elif Input.is_action_pressed("ui_right"):
 		if $AnimatedSprite2D.animation != "moveR":
+			$AnimatedSprite2D.flip_h = false   
 			$AnimatedSprite2D.play("moveR")
+	elif Input.is_action_pressed("ui_right") and $AnimatedSprite2D.animation("crouch"):
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play("roll")
+	elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_down"):
+		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.play("roll")
 	else:
 		$AnimatedSprite2D.play("idle")
+		$AnimatedSprite2D.flip_h = false   
 
 
 
