@@ -438,7 +438,7 @@ position = Vector2(864, 329)
 texture = ExtResource("4_b45jg")
 
 [node name="Panel" type="Panel" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-grow_horizontal = 2
+offset_left = 70.0
+offset_top = -100.0
+offset_right = 158.0
+offset_bottom = -81.0
