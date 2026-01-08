@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://tjoy5n3tdiev"]
+[gd_scene load_steps=38 format=3 uid="uid://tjoy5n3tdiev"]
 
 [ext_resource type="Script" uid="uid://b64xudcfxy7xp" path="res://proc_gen.gd" id="1_3qgcs"]
 [ext_resource type="Texture2D" uid="uid://ek22tfl6dl44" path="res://sprites/world_tileset.png" id="2_wgt83"]
@@ -408,15 +408,6 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_3qgcs"]
-offsets = PackedFloat32Array(0.084821425, 0.72321427)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_wgt83"]
-gradient = SubResource("Gradient_3qgcs")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pm51s"]
 shader = ExtResource("5_6h3bg")
 shader_parameter/lights = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -456,18 +447,13 @@ scale = Vector2(1.02126, 1.22838)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
-[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
-position = Vector2(27, -46)
-color = Color(0.93481797, 0.69396865, 0.38675916, 1)
-energy = 0.5
-texture = SubResource("GradientTexture2D_wgt83")
-
 [node name="Marker2D" type="Marker2D" parent="CharacterBody2D" groups=["lightSources"]]
 position = Vector2(29, -46)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Lighting" type="ColorRect" parent="CanvasLayer"]
+visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_pm51s")
 custom_minimum_size = Vector2(1000, 1000)
@@ -477,7 +463,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_0bfds")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
-visible = false
-color = Color(0.50140655, 0.5014065, 0.5014065, 1)
