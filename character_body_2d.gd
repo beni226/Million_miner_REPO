@@ -76,12 +76,14 @@ func dig():
 	var cell = tilemap.local_to_map(local_pos + Vector2(25,-35)) # Offset to dig below player
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
 	tilemap.set_cell(1,cell,-1)
+
 func dig2():
 	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
 	var local_pos = tilemap.to_local(global_position)
 	var cell = tilemap.local_to_map(local_pos + Vector2(15, -45))
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
 	tilemap.set_cell(1,cell,-1)	
+
 func dig3():
 	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
 	var local_pos = tilemap.to_local(global_position)
