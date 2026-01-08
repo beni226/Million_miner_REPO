@@ -3,16 +3,14 @@
 [ext_resource type="Script" uid="uid://dg1602axsawo6" path="res://daanger_zone.gd" id="1_pqe5i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqe5i"]
-size = Vector2(523, 104)
+size = Vector2(506, 70.5)
 
 [node name="daangerZone" type="Area2D"]
-collision_layer = 0
-collision_mask = 8
-monitorable = false
+collision_layer = 2
 script = ExtResource("1_pqe5i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(444, 231)
+position = Vector2(421, 209)
 shape = SubResource("RectangleShape2D_pqe5i")
 debug_color = Color(0.983857, 0.107328, 0.161971, 0.42)
 
