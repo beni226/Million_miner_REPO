@@ -96,7 +96,9 @@ func dig4():
 	tilemap.set_cell(1,cell,-1)
 	
 	
-	
+func _ready():
+	add_to_group("players")
+
 	
 #Death function
 func die():
