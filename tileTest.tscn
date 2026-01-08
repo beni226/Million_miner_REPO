@@ -1,9 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://bq5u0drpho201"]
+[gd_scene load_steps=35 format=3 uid="uid://bq5u0drpho201"]
 
 [ext_resource type="Texture2D" uid="uid://ek22tfl6dl44" path="res://sprites/world_tileset.png" id="1_stgeq"]
 [ext_resource type="Script" uid="uid://dci7aa22urrib" path="res://character_body_2d.gd" id="2_6l31h"]
 [ext_resource type="Texture2D" uid="uid://yj6a7frufwod" path="res://sprites/knight.png" id="3_b45jg"]
 [ext_resource type="Texture2D" uid="uid://dn8jdlbjf6gw7" path="res://icon.svg" id="4_b45jg"]
+[ext_resource type="FontFile" uid="uid://wmilafscwr2e" path="res://fonts/PixelOperator8.ttf" id="5_8uots"]
+[ext_resource type="Texture2D" uid="uid://bwk3ck8c1s708" path="res://ad83e3c6-4d2f-4117-b1ea-3cbfe12925e0.jpg" id="6_mbr7j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nj6id"]
 texture = ExtResource("1_stgeq")
@@ -403,8 +405,17 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b45jg"]
+bg_color = Color(0.62464684, 0.7986518, 0.58818626, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0.18359044, 0.18359044, 0.18359044, 0.6)
+shadow_size = 2
+
 [node name="Node2D" type="Node2D"]
-position = Vector2(45, 103)
+position = Vector2(42, 92)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(8, -21)
@@ -437,10 +448,41 @@ position_smoothing_enabled = true
 position = Vector2(864, 329)
 texture = ExtResource("4_b45jg")
 
-[node name="Button" type="Button" parent="."]
-offset_left = -33.0
-offset_top = -110.0
-offset_right = 78.0
-offset_bottom = -79.0
-theme_override_colors/font_hover_pressed_color = Color(18.188002, 18.188002, 18.188002, 1)
+[node name="Ad83e3c64d2f4117B1Ea3Cbfe12925e0" type="Sprite2D" parent="."]
+position = Vector2(-1, -47.999992)
+scale = Vector2(0.17012823, 0.15903847)
+texture = ExtResource("6_mbr7j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -43.0
+offset_top = -93.0
+offset_right = 77.0
+offset_bottom = 3.0
+size_flags_stretch_ratio = 0.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.22
+theme_override_fonts/font = ExtResource("5_8uots")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_b45jg")
 text = "Start"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.22
+theme_override_fonts/font = ExtResource("5_8uots")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_b45jg")
+text = "Options"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.22
+theme_override_fonts/font = ExtResource("5_8uots")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_b45jg")
+text = "Exit"
