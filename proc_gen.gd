@@ -3,8 +3,8 @@ extends Node2D
 @export var noise_height_text : NoiseTexture2D
 var noise : Noise
 
-var width : int = 98
-var height : int = 39
+var width : int = 100
+var height : int = 100
 
 var randomNum = RandomNumberGenerator.new()
 
