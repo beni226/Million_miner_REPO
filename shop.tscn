@@ -1,0 +1,188 @@
+[gd_scene load_steps=9 format=3 uid="uid://huxtk8xxe6w"]
+
+[ext_resource type="Script" uid="uid://vqwa1x85itpc" path="res://shopUI.gd" id="1_viryw"]
+[ext_resource type="Texture2D" uid="uid://dtwkdvsxgwdv0" path="res://sprites/fruit.png" id="2_e7rdd"]
+
+[sub_resource type="Animation" id="Animation_rplqf"]
+resource_name = "TransIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -500), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_viryw"]
+resource_name = "TransOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.01, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_e7rdd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -400)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_blqjs"]
+_data = {
+&"RESET": SubResource("Animation_e7rdd"),
+&"TransIn": SubResource("Animation_rplqf"),
+&"TransOut": SubResource("Animation_viryw")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blqjs"]
+atlas = ExtResource("2_e7rdd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fgaav"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blqjs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="shop" type="CanvasLayer"]
+process_mode = 3
+offset = Vector2(0, -400)
+transform = Transform2D(1, 0, 0, 1, 0, -400)
+script = ExtResource("1_viryw")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Panel")
+libraries = {
+&"": SubResource("AnimationLibrary_blqjs")
+}
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 110.0
+offset_top = 47.0
+offset_right = 852.0
+offset_bottom = 383.0
+
+[node name="Close" type="Button" parent="."]
+offset_left = 751.0
+offset_top = 56.0
+offset_right = 846.0
+offset_bottom = 91.0
+text = "Exit
+"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="AnimSprite" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(474, 199)
+scale = Vector2(4.75, 4.5625)
+sprite_frames = SubResource("SpriteFrames_fgaav")
+speed_scale = 2.0
+
+[node name="name" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 97.0
+offset_right = 565.0
+offset_bottom = 137.0
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 242.0
+offset_right = 627.0
+offset_bottom = 296.0
+text = "Item text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="forw" type="Button" parent="Control"]
+offset_left = 580.0
+offset_top = 183.0
+offset_right = 622.0
+offset_bottom = 230.0
+text = ">"
+
+[node name="prev" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 181.0
+offset_right = 381.0
+offset_bottom = 228.0
+text = "<"
+
+[node name="Button" type="Button" parent="Control/prev"]
+offset_left = 70.0
+offset_top = 131.0
+offset_right = 204.0
+offset_bottom = 178.0
+text = "Buy"
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
