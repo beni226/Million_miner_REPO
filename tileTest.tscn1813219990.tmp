@@ -1,10 +1,13 @@
-[gd_scene load_steps=33 format=3 uid="uid://bq5u0drpho201"]
+[gd_scene load_steps=39 format=3 uid="uid://bq5u0drpho201"]
 
 [ext_resource type="Texture2D" uid="uid://ek22tfl6dl44" path="res://sprites/world_tileset.png" id="1_stgeq"]
 [ext_resource type="Script" uid="uid://dci7aa22urrib" path="res://character_body_2d.gd" id="2_6l31h"]
 [ext_resource type="Texture2D" uid="uid://yj6a7frufwod" path="res://sprites/knight.png" id="3_b45jg"]
 [ext_resource type="Texture2D" uid="uid://dn8jdlbjf6gw7" path="res://icon.svg" id="4_b45jg"]
-[ext_resource type="PackedScene" uid="uid://btq8dn7jg141e" path="res://menu.tscn" id="5_8uots"]
+[ext_resource type="Script" uid="uid://uwr83hdlqqu2" path="res://menu.gd" id="5_5t7h2"]
+[ext_resource type="FontFile" uid="uid://wmilafscwr2e" path="res://fonts/PixelOperator8.ttf" id="5_8uots"]
+[ext_resource type="Texture2D" uid="uid://bwk3ck8c1s708" path="res://ad83e3c6-4d2f-4117-b1ea-3cbfe12925e0.jpg" id="6_mbr7j"]
+[ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="7_s766h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nj6id"]
 texture = ExtResource("1_stgeq")
@@ -404,6 +407,21 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5t7h2"]
+texture = ExtResource("6_mbr7j")
+modulate_color = Color(0.4313398, 0.4313404, 0.43134007, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b45jg"]
+bg_color = Color(0.62464684, 0.7986518, 0.58818626, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0.18359044, 0.18359044, 0.18359044, 0.6)
+shadow_size = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s766h"]
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(42, 92)
 
@@ -438,13 +456,59 @@ position_smoothing_enabled = true
 position = Vector2(864, 329)
 texture = ExtResource("4_b45jg")
 
-[node name="Control" parent="." instance=ExtResource("5_8uots")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -207.0
-offset_top = 105.0
-offset_right = -207.0
-offset_bottom = 105.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="menu" type="Node" parent="."]
+script = ExtResource("5_5t7h2")
+
+[node name="Panel" type="Panel" parent="menu"]
+offset_left = -81.0
+offset_top = -43.0
+offset_right = 210.0
+offset_bottom = 167.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_5t7h2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menu"]
+offset_left = -1.0
+offset_top = 14.0
+offset_right = 119.0
+offset_bottom = 110.0
+size_flags_stretch_ratio = 0.0
+
+[node name="Button" type="Button" parent="menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.22
+theme_override_fonts/font = ExtResource("5_8uots")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_b45jg")
+text = "Start"
+
+[node name="Button2" type="Button" parent="menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.22
+theme_override_fonts/font = ExtResource("5_8uots")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_b45jg")
+text = "Options"
+
+[node name="Button3" type="Button" parent="menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.22
+theme_override_fonts/font = ExtResource("5_8uots")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_b45jg")
+text = "Exit"
+
+[node name="Label" type="Label" parent="menu"]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 129.0
+offset_bottom = 12.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.57254905)
+theme_override_fonts/font = ExtResource("7_s766h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_s766h")
+text = "Game Name"
+uppercase = true
+
+[connection signal="pressed" from="menu/VBoxContainer/Button" to="menu" method="_on_button_pressed"]
