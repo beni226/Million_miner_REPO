@@ -12,7 +12,11 @@ config_version=5
 
 config/name="Million_Miner"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 run/main_scene="uid://bq5u0drpho201"
+=======
+run/main_scene="uid://wfmpoff0t8ao"
+>>>>>>> Stashed changes
 =======
 run/main_scene="uid://wfmpoff0t8ao"
 >>>>>>> Stashed changes
