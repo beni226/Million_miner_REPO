@@ -10,7 +10,6 @@ script/source = "extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.pressed.connect(on_start_pressed)
 	set_physics_process(false)
 	set_process_unhandled_input(false)
 	
