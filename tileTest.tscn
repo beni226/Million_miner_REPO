@@ -406,12 +406,12 @@ animations = [{
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b45jg"]
-bg_color = Color(0.62464684, 0.7986518, 0.58818626, 1)
+bg_color = Color(0.624647, 0.798652, 0.588186, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
-shadow_color = Color(0.18359044, 0.18359044, 0.18359044, 0.6)
+shadow_color = Color(0.18359, 0.18359, 0.18359, 0.6)
 shadow_size = 2
 
 [node name="Node2D" type="Node2D"]
@@ -449,15 +449,15 @@ position = Vector2(864, 329)
 texture = ExtResource("4_b45jg")
 
 [node name="Ad83e3c64d2f4117B1Ea3Cbfe12925e0" type="Sprite2D" parent="."]
-position = Vector2(-1, -47.999992)
-scale = Vector2(0.17012823, 0.15903847)
+position = Vector2(664, -663)
+scale = Vector2(0.170128, 0.159038)
 texture = ExtResource("6_mbr7j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = -43.0
-offset_top = -93.0
-offset_right = 77.0
-offset_bottom = 3.0
+offset_left = 637.0
+offset_top = -751.0
+offset_right = 757.0
+offset_bottom = -655.0
 size_flags_stretch_ratio = 0.0
 
 [node name="Button" type="Button" parent="VBoxContainer"]
