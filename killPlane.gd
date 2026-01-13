@@ -5,10 +5,10 @@ extends Area2D
 
 @onready var collision := $CollisionShape2D
 @onready var timer := $Timer
-@onready var visual := $ColorRect   # your visible rectangle
 
 var player_inside: Node = null
 
+	
 
 func _ready():
 	if collision.shape == null:
@@ -24,12 +24,15 @@ func _on_body_entered(body):
 	if body.is_in_group("players"):
 		player_inside = body
 		timer.start()  # start 3-second countdown
+		
 
 func _on_body_exited(body):
 	if body == player_inside:
 		player_inside = null
 		timer.stop()   # cancel if player leaves early
 
+
 func _on_timer_timeout():
 	if player_inside:
 		player_inside.die()  # kill the player
+		
