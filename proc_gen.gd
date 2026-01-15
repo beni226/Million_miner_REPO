@@ -3,7 +3,9 @@ extends Node2D
 @export var noise_height_text : NoiseTexture2D
 var noise : Noise
 
-# size of map, edit numbers for diff ranges
+# size of map, edit numbers for diff ranges, reference for where blocks spawn
+# dirt blocks still need to be placed through tilemap,
+# width and height need to be changed according to dirt blocks
 var width : int = 100
 var height : int = 100
 
