@@ -28,10 +28,10 @@ func generate_world():
 			var noise_val = noise.get_noise_2d(x,y)
 			
 			if noise_val < 0.0:
-				#place question block at a low chance
+				# places question block at a low chance
 				if randomNum.randf() < 0.024:
 					tile_map.set_cell(0, Vector2(x,y), source_id, question_atlas)
 				
-				#place exclamation block at a lower chance
+				# places exclamation block at a lower chance
 				if randomNum.randf() < 0.008:
 					tile_map.set_cell(0, Vector2(x,y), source_id, exclamation_atlas)
