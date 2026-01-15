@@ -14,11 +14,11 @@ position = Vector2(143, 90)
 [node name="daangerZone" parent="Node2D" instance=ExtResource("2_h2yge")]
 position = Vector2(-936, -531)
 
-[node name="KillPlane" parent="Node2D" instance=ExtResource("2_1bvp3")]
-position = Vector2(328, -425)
-
 [node name="Control" parent="." instance=ExtResource("1_1bvp3")]
 offset_left = 186.0
 offset_top = 204.0
 offset_right = 186.0
 offset_bottom = 204.0
+
+[node name="KillPlane" parent="." instance=ExtResource("2_1bvp3")]
+position = Vector2(471, -335)
