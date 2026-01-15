@@ -17,7 +17,7 @@ var items = {
 		"name":"pickaxe upgrade",
 		"desc":"upgrade your pickaxe strength",
 		"cost": 50  
-	}
+	},
 	
 }
 
@@ -27,5 +27,5 @@ var inventory = {
 		"desc": "speed boost!!!",
 		"cost": 10,
 		"count": 1
-	}
+	},
 }	

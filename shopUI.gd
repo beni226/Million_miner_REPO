@@ -23,15 +23,17 @@ func _on_prev_pressed() -> void:
 	
 func _on_button_pressed() -> void:
 	var hasItem = false
-	if Global.gold > Global.items[currItem]["cost"]:
-		for i in Global.inventory:
-			if Global.inventory[i]["name"] == Global.inventory[currItem]["name"]:
-				Global.inventory[i]["count"] +=1
+	if Global.gold >= Global.items[currItem]["cost"]:
+		for i in Global.inventory.keys():
+			if Global.inventory[i]["name"] == Global.items[currItem]["name"]:
+				Global.inventory[i]["count"] += 1
 				hasItem = true
-		if hasItem == false:
+				break
+		if not hasItem:
 			var tempDic = Global.items[currItem].duplicate()
 			tempDic["count"] = 1
-			Global.inventory[Global.inventory.size()] = tempDic
+			var new_key = Global.inventory.keys().max() + 1
+			Global.inventory[new_key] = tempDic
 		Global.gold -= Global.items[currItem]["cost"]
 	print(Global.inventory)
 	print(Global.gold)

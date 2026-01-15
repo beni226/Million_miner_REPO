@@ -219,8 +219,7 @@ anchors_preset = 0
 position = Vector2(476, 188)
 scale = Vector2(2.97656, 2.42188)
 sprite_frames = SubResource("SpriteFrames_fgaav")
-animation = &"bomb"
-frame_progress = 0.392714
+animation = &"speed potion"
 speed_scale = 2.0
 
 [node name="name" type="Label" parent="Control"]
