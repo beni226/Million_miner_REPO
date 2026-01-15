@@ -35,10 +35,8 @@ vec4 modulate(vec4 color, float distToLight) {
 	if (distToLight >= bandRadius) {
 		return mix(modulated, color, bandStrength);
 	}
-
 	return color;
 }
-
 
 void fragment() {
 	COLOR = texture(screenTexture, SCREEN_UV);
