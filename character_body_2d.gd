@@ -103,7 +103,8 @@ func _ready():
 #Death function
 func die():
 	#$AnimatedSprite2D.play("death")
-	get_tree().change_scene_to_file("res://GameOver.tscn")
+	#get_tree().change_scene_to_file("res://GameOver.tscn")
+	call_deferred("_go_to_game_over")
 
 	# Move player to respawn point
 	global_position = Vector2(100, 100) # Change to your respawn point
@@ -122,3 +123,6 @@ func die():
 func _restore_collision():
 	collision_layer = 1
 	collision_mask = 1
+	
+func _go_to_game_over():
+	get_tree().change_scene_to_file("res://GameOver.tscn")
