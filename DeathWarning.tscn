@@ -1,5 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://bijy53dilshin"]
 
+[sub_resource type="Animation" id="Animation_24d0h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_0aeml"]
 resource_name = "transi"
 length = 3.0
@@ -16,28 +31,13 @@ tracks/0/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_24d0h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5bycj"]
 _data = {
 &"RESET": SubResource("Animation_24d0h"),
 &"transi": SubResource("Animation_0aeml")
 }
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="GameOver" type="CanvasLayer"]
 
 [node name="deathani" type="AnimationPlayer" parent="."]
 libraries = {

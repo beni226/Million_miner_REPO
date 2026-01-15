@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckytxj1sc6825"]
+
+[ext_resource type="Script" uid="uid://g5dnfrr6b0rl" path="res://game_over.gd" id="1_40baj"]
+[ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="2_eksk4"]
+[ext_resource type="FontFile" uid="uid://wmilafscwr2e" path="res://fonts/PixelOperator8.ttf" id="3_xl4ts"]
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_40baj")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 530.0
+offset_top = 310.0
+offset_right = -537.0
+offset_bottom = -315.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_eksk4")
+theme_override_font_sizes/font_size = 32
+text = "Game over"
+
+[node name="Respawn" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 517.0
+offset_top = 354.0
+offset_right = -540.0
+offset_bottom = -263.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_xl4ts")
+text = "Respawn"
+
+[node name="Quit" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 516.0
+offset_top = 407.0
+offset_right = -535.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_xl4ts")
+text = "Quit"
+
+[connection signal="pressed" from="Respawn" to="." method="_on_respawn_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

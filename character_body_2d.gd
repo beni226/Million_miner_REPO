@@ -102,7 +102,8 @@ func _ready():
 	
 #Death function
 func die():
-	print("Player has Died!")
+	#$AnimatedSprite2D.play("death")
+	get_tree().change_scene_to_file("res://GameOver.tscn")
 
 	# Move player to respawn point
 	global_position = Vector2(100, 100) # Change to your respawn point

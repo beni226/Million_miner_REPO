@@ -10,7 +10,7 @@
 position = Vector2(248, 210)
 
 [node name="daangerZone" parent="Node2D" instance=ExtResource("2_h2yge")]
-position = Vector2(26, -327)
+position = Vector2(-28, -278)
 
 [node name="KillPlane" parent="Node2D" instance=ExtResource("2_1bvp3")]
-position = Vector2(-321, -245)
+position = Vector2(-1035, -319)
