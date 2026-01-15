@@ -494,7 +494,6 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(42, 92)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(8, -21)
@@ -530,7 +529,7 @@ shape = SubResource("RectangleShape2D_6l31h")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(29, -49)
 sprite_frames = SubResource("SpriteFrames_nbu5r")
-animation = &"crouch"
+animation = &"roll"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]

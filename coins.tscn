@@ -1,6 +1,5 @@
-[gd_scene load_steps=17 format=3 uid="uid://rkredgx766jo"]
+[gd_scene load_steps=16 format=3 uid="uid://rkredgx766jo"]
 
-[ext_resource type="Script" path="res://collectables/coins.gd" id="1_665jj"]
 [ext_resource type="Texture2D" uid="uid://vq32lxg88kkf" path="res://sprites/coin.png" id="2_88f8t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xskjn"]
@@ -99,7 +98,6 @@ animations = [{
 radius = 4.0
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_665jj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
