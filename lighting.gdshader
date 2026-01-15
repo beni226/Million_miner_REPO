@@ -14,10 +14,10 @@ uniform float lightRadius = 148.0;
 
 float distance_to_light(vec2 coords) {
 	float dist = 1000.0;
-	
+
 	for (int i = 0; i < numOfLights; i++) {
 		float newDist = distance(coords, lights[i]);
-		
+
 		if (newDist < dist) {
 			dist = newDist;
 		}
@@ -27,15 +27,15 @@ float distance_to_light(vec2 coords) {
 
 vec4 modulate(vec4 color, float distToLight) {
 	vec4 modulated = color * modulateColor;
-	
+
 	if (distToLight > lightRadius) {
 		return modulated;
 	}
-	
+
 	if (distToLight >= bandRadius) {
 		return mix(modulated, color, bandStrength);
 	}
-	
+
 	return color;
 }
 
@@ -44,4 +44,3 @@ void fragment() {
 	COLOR = texture(screenTexture, SCREEN_UV);
 	COLOR = modulate(COLOR, distance_to_light(FRAGCOORD.xy));
 }
-

@@ -1,10 +1,11 @@
 extends ColorRect
-class_name lighting
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	show()
+	
+	# Comment and uncomment the line below to get rid of shaders
+	# modulate.a = 0.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -17,3 +18,4 @@ func _get_light_postions():
 		func(light: Node2D):
 			return light.get_global_transform_with_canvas().origin
 	)
+	

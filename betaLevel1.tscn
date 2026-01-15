@@ -452,7 +452,7 @@ position = Vector2(29, -46)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Lighting" type="ColorRect" parent="CanvasLayer"]
+[node name="LevelLighting" type="ColorRect" parent="CanvasLayer"]
 visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_pm51s")

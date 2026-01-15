@@ -452,8 +452,7 @@ position = Vector2(29, -46)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Lighting" type="ColorRect" parent="CanvasLayer"]
-visible = false
+[node name="LevelLighting" type="ColorRect" parent="CanvasLayer"]
 z_index = 1
 material = SubResource("ShaderMaterial_5t7h2")
 custom_minimum_size = Vector2(1000, 1000)
@@ -461,7 +460,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -138.0
-offset_top = -176.0
+offset_top = -39.0
 offset_right = 598.0
 offset_bottom = 1045.0
 grow_horizontal = 2
