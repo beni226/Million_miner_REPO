@@ -5,12 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://hk2e0q3jkfeb" path="res://daanger_zone.tscn" id="2_h2yge"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(-100, 10)
 
 [node name="Node2D" parent="." instance=ExtResource("1_0xm2m")]
-position = Vector2(248, 210)
+position = Vector2(143, 90)
 
 [node name="daangerZone" parent="Node2D" instance=ExtResource("2_h2yge")]
 position = Vector2(-28, -278)
 
-[node name="KillPlane" parent="Node2D" instance=ExtResource("2_1bvp3")]
-position = Vector2(-1035, -319)
+[node name="KillPlane" parent="." instance=ExtResource("2_1bvp3")]
+position = Vector2(471, -335)

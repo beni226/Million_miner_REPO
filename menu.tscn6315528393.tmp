@@ -1,0 +1,136 @@
+[gd_scene load_steps=10 format=3 uid="uid://btq8dn7jg141e"]
+
+[ext_resource type="Texture2D" uid="uid://bwk3ck8c1s708" path="res://ad83e3c6-4d2f-4117-b1ea-3cbfe12925e0.jpg" id="2_ytr4m"]
+[ext_resource type="FontFile" uid="uid://wmilafscwr2e" path="res://fonts/PixelOperator8.ttf" id="3_l48gv"]
+[ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="4_ecwwl"]
+
+[sub_resource type="GDScript" id="GDScript_ytr4m"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	set_physics_process(false)
+	set_process_unhandled_input(false)
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+	
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://tileTest.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_4hy44"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+	
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kk3ma"]
+texture = ExtResource("2_ytr4m")
+modulate_color = Color(0.4313398, 0.4313404, 0.43134007, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrnbx"]
+bg_color = Color(0.62464684, 0.7986518, 0.58818626, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0.18359044, 0.18359044, 0.18359044, 0.6)
+shadow_size = 2
+
+[sub_resource type="GDScript" id="GDScript_mae5d"]
+script/source = "extends Button
+\"res://tileTest.tscn\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	self.pressed.connect(on_start_pressed)
+	set_physics_process(false)
+	set_process_unhandled_input(false)
+	
+func on_start_pressed() -> void:
+	
+	
+	get_tree().change_scene_to_file(\"res://tileTest.tscn\")
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iqepy"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_ytr4m")
+
+[node name="menu" type="Node" parent="."]
+script = SubResource("GDScript_4hy44")
+
+[node name="Panel" type="Panel" parent="menu"]
+offset_left = -81.0
+offset_top = -43.0
+offset_right = 210.0
+offset_bottom = 167.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_kk3ma")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menu"]
+offset_left = -1.0
+offset_top = 14.0
+offset_right = 119.0
+offset_bottom = 110.0
+size_flags_stretch_ratio = 0.0
+
+[node name="Start Button" type="Button" parent="menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.22
+theme_override_fonts/font = ExtResource("3_l48gv")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrnbx")
+text = "Start"
+script = SubResource("GDScript_mae5d")
+
+[node name="Button2" type="Button" parent="menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.22
+theme_override_fonts/font = ExtResource("3_l48gv")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrnbx")
+text = "Options"
+
+[node name="Button3" type="Button" parent="menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.22
+theme_override_fonts/font = ExtResource("3_l48gv")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrnbx")
+text = "Exit"
+
+[node name="Label" type="Label" parent="menu"]
+offset_left = -11.0
+offset_top = -11.0
+offset_right = 129.0
+offset_bottom = 12.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.57254905)
+theme_override_fonts/font = ExtResource("4_ecwwl")
+theme_override_styles/normal = SubResource("StyleBoxTexture_iqepy")
+text = "Game Name"
+uppercase = true
+
+[connection signal="pressed" from="menu/VBoxContainer/Start Button" to="menu" method="_on_button_pressed"]
