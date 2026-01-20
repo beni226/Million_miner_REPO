@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -200.0
 var jump_count = 0
 const MAX_JUMPS = 2
 
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -96,7 +97,9 @@ func dig4():
 	tilemap.set_cell(1,cell,-1)
 	
 	
-	
+func _ready():
+	add_to_group("players")
+
 	
 #Death function
 func die():

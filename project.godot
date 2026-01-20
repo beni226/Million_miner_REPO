@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 CoinsCollect="*res://collectables/coinsCollect.gd"
 Coins="*res://collectables/coins.gd"
 TileTest="*res://collectables/tile_test.gd"
+Global="*res://Global.gd"
 
 [input]
 

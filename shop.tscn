@@ -1,0 +1,275 @@
+[gd_scene load_steps=24 format=3 uid="uid://huxtk8xxe6w"]
+
+[ext_resource type="Script" uid="uid://vqwa1x85itpc" path="res://shopUI.gd" id="1_viryw"]
+[ext_resource type="Texture2D" uid="uid://dgu5lo7hihfhb" path="res://sprites/bomb_character_o_idle.png" id="2_gmb2m"]
+[ext_resource type="Texture2D" uid="uid://bqk78phrnwc2r" path="res://sprites/bomb_character_o_explode.png" id="3_8kdgp"]
+[ext_resource type="Texture2D" uid="uid://b27pg4p64uvvw" path="res://sprites/FREE 16x16 Pickaxes/FREE 16x16 Pickaxes/sPickaxe1.png" id="4_myf4l"]
+[ext_resource type="Texture2D" uid="uid://coq7gvkhl3iq3" path="res://sprites/FREE 16x16 Pickaxes/FREE 16x16 Pickaxes/sPickaxe2.png" id="5_p5a0g"]
+[ext_resource type="Texture2D" uid="uid://cv1o668adlx85" path="res://sprites/[32x32] Potions.png" id="6_xqmyw"]
+[ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="7_myf4l"]
+[ext_resource type="FontFile" uid="uid://wmilafscwr2e" path="res://fonts/PixelOperator8.ttf" id="8_p5a0g"]
+
+[sub_resource type="Animation" id="Animation_e7rdd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -400)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_rplqf"]
+resource_name = "TransIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -500), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_viryw"]
+resource_name = "TransOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.01, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_blqjs"]
+_data = {
+&"RESET": SubResource("Animation_e7rdd"),
+&"TransIn": SubResource("Animation_rplqf"),
+&"TransOut": SubResource("Animation_viryw")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw5c6"]
+atlas = ExtResource("2_gmb2m")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msgp6"]
+atlas = ExtResource("2_gmb2m")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e23gp"]
+atlas = ExtResource("3_8kdgp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrolr"]
+atlas = ExtResource("3_8kdgp")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gldgk"]
+atlas = ExtResource("3_8kdgp")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_763b7"]
+atlas = ExtResource("4_myf4l")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtxfs"]
+atlas = ExtResource("5_p5a0g")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuxin"]
+atlas = ExtResource("6_xqmyw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lh4o"]
+atlas = ExtResource("6_xqmyw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il0eq"]
+atlas = ExtResource("6_xqmyw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fgaav"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw5c6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msgp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e23gp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrolr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gldgk")
+}],
+"loop": true,
+"name": &"bomb",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_763b7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtxfs")
+}],
+"loop": true,
+"name": &"pickaxe upgrade",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuxin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lh4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_il0eq")
+}],
+"loop": true,
+"name": &"speed potion",
+"speed": 1.0
+}]
+
+[node name="shop" type="CanvasLayer"]
+process_mode = 3
+offset = Vector2(0, -400)
+transform = Transform2D(1, 0, 0, 1, 0, -400)
+script = ExtResource("1_viryw")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Panel")
+libraries = {
+&"": SubResource("AnimationLibrary_blqjs")
+}
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 110.0
+offset_top = 47.0
+offset_right = 852.0
+offset_bottom = 383.0
+
+[node name="Close" type="Button" parent="."]
+offset_left = 751.0
+offset_top = 56.0
+offset_right = 846.0
+offset_bottom = 91.0
+text = "Exit
+"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="AnimSprite" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(476, 188)
+scale = Vector2(2.97656, 2.42188)
+sprite_frames = SubResource("SpriteFrames_fgaav")
+animation = &"speed potion"
+speed_scale = 2.0
+
+[node name="name" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 97.0
+offset_right = 565.0
+offset_bottom = 137.0
+theme_override_fonts/font = ExtResource("7_myf4l")
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 242.0
+offset_right = 627.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("8_p5a0g")
+text = "Item text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="forw" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 183.0
+offset_right = 622.0
+offset_bottom = 230.0
+text = ">"
+
+[node name="prev" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 181.0
+offset_right = 381.0
+offset_bottom = 228.0
+text = "<"
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 312.0
+offset_right = 543.0
+offset_bottom = 359.0
+text = "Buy"
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Control/forw" to="." method="_on_forw_pressed"]
+[connection signal="pressed" from="Control/prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
