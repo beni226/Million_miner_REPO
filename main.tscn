@@ -11,7 +11,7 @@ position = Vector2(-100, 10)
 position = Vector2(143, 90)
 
 [node name="daangerZone" parent="Node2D" instance=ExtResource("2_h2yge")]
-position = Vector2(-936, -531)
+position = Vector2(-28, -278)
 
 [node name="KillPlane" parent="." instance=ExtResource("2_1bvp3")]
 position = Vector2(471, -335)
