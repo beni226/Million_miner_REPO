@@ -1,6 +1,19 @@
 extends Node
 
-var gold = 10000
+signal gold_changed(new_gold)
+
+var gold := 10000
+
+func add_gold(amount: int) -> void:
+	gold += amount
+	emit_signal("gold_changed", gold)
+
+func spend_gold(amount: int) -> bool:
+	if gold >= amount:
+		gold -= amount
+		emit_signal("gold_changed", gold)
+		return true
+	return false
 
 var items = {
 	0: {
