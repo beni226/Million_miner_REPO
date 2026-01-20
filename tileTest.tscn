@@ -453,6 +453,7 @@ position = Vector2(29, -46)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LevelLighting" type="ColorRect" parent="CanvasLayer"]
+visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_5t7h2")
 custom_minimum_size = Vector2(1000, 1000)
