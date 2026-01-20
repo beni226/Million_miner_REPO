@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckytxj1sc6825"]
+[gd_scene load_steps=4 format=3 uid="uid://cglsmykjv42x"]
 
-[ext_resource type="Script" uid="uid://g5dnfrr6b0rl" path="res://game_over.gd" id="1_40baj"]
+[ext_resource type="Script" path="res://game_over.gd" id="1_40baj"]
 [ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="2_eksk4"]
 [ext_resource type="FontFile" uid="uid://wmilafscwr2e" path="res://fonts/PixelOperator8.ttf" id="3_xl4ts"]
 
