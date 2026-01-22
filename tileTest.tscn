@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://yj6a7frufwod" path="res://sprites/knight.png" id="3_b45jg"]
 [ext_resource type="Script" uid="uid://bc53fpyyhbkm7" path="res://shop.gd" id="4_8uots"]
 [ext_resource type="PackedScene" uid="uid://huxtk8xxe6w" path="res://shop.tscn" id="4_mbr7j"]
-[ext_resource type="PackedScene" uid="uid://cvfmd14tl8wan" path="res://collectables/coin_ui.tscn" id="6_mbr7j"]
 [ext_resource type="Texture2D" uid="uid://7dbtq86tmn4o" path="res://sprites/01-King Human/Idle (78x58).png" id="6_s766h"]
+[ext_resource type="PackedScene" uid="uid://0q0n7ig5xpbh" path="res://inventory.tscn" id="7_5t7h2"]
 [ext_resource type="PackedScene" uid="uid://rkredgx766jo" path="res://coins.tscn" id="7_s766h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nj6id"]
@@ -540,11 +540,7 @@ scale = Vector2(1.02126, 1.22838)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
-[node name="CoinUi" parent="CharacterBody2D" instance=ExtResource("6_mbr7j")]
-offset_left = -108.0
-offset_top = -122.0
-offset_right = -74.0
-offset_bottom = -101.0
+[node name="Inventory" parent="CharacterBody2D" instance=ExtResource("7_5t7h2")]
 
 [node name="Node2" type="Node" parent="."]
 

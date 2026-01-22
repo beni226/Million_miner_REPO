@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://huxtk8xxe6w"]
+[gd_scene load_steps=25 format=3 uid="uid://huxtk8xxe6w"]
 
 [ext_resource type="Script" uid="uid://vqwa1x85itpc" path="res://shopUI.gd" id="1_viryw"]
 [ext_resource type="Texture2D" uid="uid://dgu5lo7hihfhb" path="res://sprites/bomb_character_o_idle.png" id="2_gmb2m"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cv1o668adlx85" path="res://sprites/[32x32] Potions.png" id="6_xqmyw"]
 [ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="7_myf4l"]
 [ext_resource type="FontFile" uid="uid://wmilafscwr2e" path="res://fonts/PixelOperator8.ttf" id="8_p5a0g"]
+[ext_resource type="PackedScene" uid="uid://cvfmd14tl8wan" path="res://collectables/coin_ui.tscn" id="9_p5a0g"]
 
 [sub_resource type="Animation" id="Animation_e7rdd"]
 length = 0.001
@@ -268,6 +269,12 @@ offset_top = 312.0
 offset_right = 543.0
 offset_bottom = 359.0
 text = "Buy"
+
+[node name="CoinUi" parent="Control" instance=ExtResource("9_p5a0g")]
+offset_left = 127.0
+offset_top = 67.0
+offset_right = 173.0
+offset_bottom = 88.0
 
 [connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Control/forw" to="." method="_on_forw_pressed"]

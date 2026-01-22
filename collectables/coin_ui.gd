@@ -9,3 +9,4 @@ func _ready():
 
 func on_gold_changed(new_gold: int) -> void:
 	label.text = str(new_gold)
+	

@@ -1,17 +1,18 @@
 extends Node
 
-signal gold_changed(new_gold)
+signal gold_changed(new_gold: int)
 
-var gold := 10000
+var gold: int = 10000:
+	set(value):
+		gold = value
+		gold_changed.emit(gold)
 
 func add_gold(amount: int) -> void:
-	gold += amount
-	emit_signal("gold_changed", gold)
+	self.gold += amount
 
 func spend_gold(amount: int) -> bool:
 	if gold >= amount:
-		gold -= amount
-		emit_signal("gold_changed", gold)
+		self.gold -= amount
 		return true
 	return false
 
