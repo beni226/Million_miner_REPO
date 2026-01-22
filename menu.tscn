@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://btq8dn7jg141e"]
+[gd_scene load_steps=10 format=3 uid="uid://11eqqidbxx1m"]
 
 [ext_resource type="Texture2D" uid="uid://bwk3ck8c1s708" path="res://ad83e3c6-4d2f-4117-b1ea-3cbfe12925e0.jpg" id="2_ytr4m"]
 [ext_resource type="FontFile" uid="uid://wmilafscwr2e" path="res://fonts/PixelOperator8.ttf" id="3_l48gv"]
@@ -46,10 +46,9 @@ func _ready() -> void:
 	get_tree().paused = true
 
 func on_start_pressed() -> void:
-	print(\"Start pressed!\") 
 	get_tree().paused = false
 	get_parent().hide() 
-	get_tree().change_scene_to_file(\"res://tileTest.tscn\")
+	get_tree().change_scene_to_file(\"res://main.tscn\")
 "
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iqepy"]
