@@ -20,9 +20,9 @@ var exclamation_atlas = Vector2i(1,2)
 
 func _ready():
 	noise = noise_height_text.noise
-	generate_world()
+	generateWorld()
 	
-func generate_world():
+func generateWorld():
 	for x in range(width):
 		for y in range(height):
 			var noise_val = noise.get_noise_2d(x,y)
