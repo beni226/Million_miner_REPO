@@ -96,3 +96,35 @@ func dig4():
 	var cell = tilemap.local_to_map(local_pos + Vector2(25,-65)) # Offset to dig below player
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
 	tilemap.set_cell(1,cell,-1)
+	
+	
+func _ready():
+	add_to_group("players")
+
+	
+#Death function
+func die():
+	#$AnimatedSprite2D.play("death")
+	#get_tree().change_scene_to_file("res://GameOver.tscn")
+	call_deferred("_go_to_game_over")
+
+	# Move player to respawn point
+	global_position = Vector2(100, 100) # Change to your respawn point
+
+	# Reset movement
+	velocity = Vector2.ZERO
+	jump_count = 0
+
+	# Temporarily disable collision to avoid instantly re-triggering death zone
+	set_deferred("collision_layer", 0)
+	set_deferred("collision_mask", 0)
+	
+	# Restore collisions next frame
+	call_deferred("_restore_collision")
+
+func _restore_collision():
+	collision_layer = 1
+	collision_mask = 1
+	
+func _go_to_game_over():
+	get_tree().change_scene_to_file("res://GameOver.tscn")
