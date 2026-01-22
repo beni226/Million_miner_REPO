@@ -1,23 +1,23 @@
 [gd_scene load_steps=38 format=3 uid="uid://bq5u0drpho201"]
 
-[ext_resource type="Script" uid="uid://b64xudcfxy7xp" path="res://proc_gen.gd" id="1_b45jg"]
+[ext_resource type="Script" path="res://proc_gen.gd" id="1_b45jg"]
 [ext_resource type="Texture2D" uid="uid://ek22tfl6dl44" path="res://sprites/world_tileset.png" id="1_stgeq"]
 [ext_resource type="Script" uid="uid://dci7aa22urrib" path="res://character_body_2d.gd" id="2_6l31h"]
 [ext_resource type="Texture2D" uid="uid://yj6a7frufwod" path="res://sprites/knight.png" id="3_b45jg"]
-[ext_resource type="Shader" uid="uid://bisxd7wvdkjta" path="res://lighting.gdshader" id="5_mbr7j"]
-[ext_resource type="Script" uid="uid://b2rt254wajrl4" path="res://lighting.gd" id="6_s766h"]
+[ext_resource type="Shader" path="res://lighting.gdshader" id="5_mbr7j"]
+[ext_resource type="Script" path="res://lighting.gd" id="6_s766h"]
 
 [sub_resource type="Gradient" id="Gradient_mbr7j"]
 interpolation_mode = 1
-offsets = PackedFloat32Array(0, 0.8348214)
-colors = PackedColorArray(0.9764706, 0.8352941, 0.16078432, 1, 0.62352943, 0.37254903, 0, 1)
+offsets = PackedFloat32Array(0, 0.834821)
+colors = PackedColorArray(0.976471, 0.835294, 0.160784, 1, 0.623529, 0.372549, 0, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_s766h"]
 seed = 4
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5t7h2"]
-noise = SubResource("FastNoiseLite_s766h")
 color_ramp = SubResource("Gradient_mbr7j")
+noise = SubResource("FastNoiseLite_s766h")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nj6id"]
 texture = ExtResource("1_stgeq")
@@ -421,12 +421,12 @@ animations = [{
 shader = ExtResource("5_mbr7j")
 shader_parameter/lights = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/numOfLights = 1
-shader_parameter/modulateColor = Color(0.105882354, 0.003921569, 0.1882353, 0.9529412)
+shader_parameter/modulateColor = Color(0.105882, 0.00392157, 0.188235, 0.952941)
 shader_parameter/bandRadius = 96.0
 shader_parameter/bandStrength = 0.3
 shader_parameter/lightRadius = 148.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_b45jg")
 noise_height_text = SubResource("NoiseTexture2D_5t7h2")
 
@@ -468,10 +468,10 @@ z_index = 1
 material = SubResource("ShaderMaterial_5t7h2")
 custom_minimum_size = Vector2(1000, 1000)
 anchors_preset = -1
-anchor_left = -0.09201389
-anchor_top = -0.20524691
-anchor_right = 1.6241319
-anchor_bottom = 2.8734567
+anchor_left = -0.0920139
+anchor_top = -0.205247
+anchor_right = 1.62413
+anchor_bottom = 2.87346
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_s766h")
