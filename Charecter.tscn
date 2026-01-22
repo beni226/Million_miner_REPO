@@ -253,7 +253,8 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["players"]]
-collision_mask = 2
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_wfi5a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
