@@ -1,9 +1,10 @@
-[gd_scene load_steps=38 format=3 uid="uid://0u7vct2b3jkx"]
+[gd_scene load_steps=39 format=3 uid="uid://0u7vct2b3jkx"]
 
 [ext_resource type="Texture2D" uid="uid://5rf80gppcqc7" path="res://sprites/Forest_Monsters_FREE/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="1_7qijm"]
 [ext_resource type="Script" uid="uid://efgwnkjarkiw" path="res://nushroom_enemy.gd" id="1_ooyft"]
 [ext_resource type="Texture2D" uid="uid://bn0ekb68g7gqm" path="res://sprites/Forest_Monsters_FREE/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Die.png" id="2_ooyft"]
 [ext_resource type="Texture2D" uid="uid://bv4j8axdu4yp3" path="res://sprites/Forest_Monsters_FREE/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Run.png" id="3_twe8m"]
+[ext_resource type="PackedScene" uid="uid://d0c41tswne5dx" path="res://KillPlane.tscn" id="5_twe8m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bpu7y"]
 atlas = ExtResource("1_7qijm")
@@ -237,7 +238,8 @@ animations = [{
 radius = 82.4924
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qasxv"]
-radius = 13.0
+radius = 3.0
+height = 14.0
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_ooyft")
@@ -245,18 +247,22 @@ script = ExtResource("1_ooyft")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_2mubr")
-animation = &"idle"
-frame_progress = 0.519991
+animation = &"new_animation"
+frame = 9
+frame_progress = 0.616935
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 2
+
+[node name="KillPlane" parent="detection_area" instance=ExtResource("5_twe8m")]
+position = Vector2(-710, -214)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
 position = Vector2(0, -15)
 shape = SubResource("CircleShape2D_am4pa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15)
+position = Vector2(0, -10)
 shape = SubResource("CapsuleShape2D_qasxv")
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
