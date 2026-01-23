@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://0q0n7ig5xpbh"]
+[gd_scene load_steps=10 format=3 uid="uid://0q0n7ig5xpbh"]
 
 [ext_resource type="Script" uid="uid://t8v4ejuhny04" path="res://inventory.gd" id="1_5tt2m"]
 [ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="2_mrqgh"]
 [ext_resource type="PackedScene" uid="uid://cvfmd14tl8wan" path="res://collectables/coin_ui.tscn" id="3_dw5ng"]
 [ext_resource type="Script" uid="uid://c8n6d72lao1dw" path="res://inv_contain.gd" id="4_mrqgh"]
+[ext_resource type="PackedScene" uid="uid://bas01j3t2idr7" path="res://slot.tscn" id="5_dw5ng"]
 
 [sub_resource type="Animation" id="Animation_e7rdd"]
 length = 0.001
@@ -140,5 +141,8 @@ offset_right = 522.0
 offset_bottom = 298.0
 columns = 6
 script = ExtResource("4_mrqgh")
+
+[node name="slot" parent="InvContain" instance=ExtResource("5_dw5ng")]
+layout_mode = 2
 
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]

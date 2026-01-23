@@ -30,7 +30,17 @@ var items = {
 	2: {
 		"name":"pickaxe upgrade",
 		"desc":"upgrade your pickaxe strength",
-		"cost": 50  
+		"cost": 100   
+	},
+	3: {
+		"name":"torch",
+		"desc":"increases light in the caves",
+		"cost": 35 
+	},
+	4: {
+		"name":"lamp",
+		"desc":"increases light even further",
+		"cost": 100  
 	},
 	
 }
