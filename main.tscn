@@ -14,7 +14,7 @@ position = Vector2(143, 90)
 [node name="daangerZone" parent="Node2D" instance=ExtResource("2_h2yge")]
 position = Vector2(932, 1431)
 
-[node name="enemy" parent="Node2D" instance=ExtResource("3_1bvp3")]
+[node name="enemy2" parent="Node2D" instance=ExtResource("3_1bvp3")]
 position = Vector2(269, -51)
 
 [node name="KillPlane" parent="." instance=ExtResource("2_1bvp3")]
