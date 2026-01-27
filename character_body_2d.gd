@@ -11,6 +11,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -22,6 +23,7 @@ func _physics_process(delta: float) -> void:
 			jump_count += 1	
 		if is_on_floor():
 			jump_count = 0
+
 		
 	if Input.is_action_pressed("ui_down") and is_on_floor():
 		$AnimatedSprite2D.play("crouch")
@@ -42,8 +44,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		$AnimatedSprite2D.play("idle")
 		$AnimatedSprite2D.flip_h = false   
-
-
 
 
 
@@ -97,7 +97,7 @@ func dig4():
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
 	tilemap.set_cell(1,cell,-1)
 	
-	
+
 func _ready():
 	add_to_group("players")
 

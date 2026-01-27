@@ -235,7 +235,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_am4pa"]
-radius = 82.4924
+radius = 133.015
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qasxv"]
 radius = 3.0
@@ -264,6 +264,14 @@ shape = SubResource("CircleShape2D_am4pa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
 shape = SubResource("CapsuleShape2D_qasxv")
+
+[node name="WallCheck" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(12, 0)
+
+[node name="GroundCheck" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(12, 16)
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
