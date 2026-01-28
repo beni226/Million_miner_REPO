@@ -76,12 +76,14 @@ func dig():
 	var cell = tilemap.local_to_map(local_pos + Vector2(25,-35)) # Offset to dig below player
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
 	tilemap.set_cell(1,cell,-1)
+
 func dig2():
 	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
 	var local_pos = tilemap.to_local(global_position)
 	var cell = tilemap.local_to_map(local_pos + Vector2(15, -45))
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
 	tilemap.set_cell(1,cell,-1)	
+
 func dig3():
 	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
 	var local_pos = tilemap.to_local(global_position)
@@ -102,7 +104,9 @@ func _ready():
 	
 #Death function
 func die():
-	print("Player has Died!")
+	#$AnimatedSprite2D.play("death")
+	#get_tree().change_scene_to_file("res://GameOver.tscn")
+	call_deferred("_go_to_game_over")
 
 	# Move player to respawn point
 	global_position = Vector2(100, 100) # Change to your respawn point
@@ -121,3 +125,6 @@ func die():
 func _restore_collision():
 	collision_layer = 1
 	collision_mask = 1
+	
+func _go_to_game_over():
+	get_tree().change_scene_to_file("res://GameOver.tscn")

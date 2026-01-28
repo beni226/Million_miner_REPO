@@ -1,12 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://wfmpoff0t8ao"]
+[gd_scene load_steps=5 format=3 uid="uid://wfmpoff0t8ao"]
 
 [ext_resource type="PackedScene" uid="uid://bq5u0drpho201" path="res://tileTest.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://d0c41tswne5dx" path="res://KillPlane.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://hk2e0q3jkfeb" path="res://daanger_zone.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://btq8dn7jg141e" path="res://menu.tscn" id="4_1bvp3"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(-100, 10)
 
 [node name="Node2D" parent="." instance=ExtResource("1_0xm2m")]
-position = Vector2(148, 102)
+position = Vector2(143, 90)
 
 [node name="daangerZone" parent="Node2D" instance=ExtResource("2_h2yge")]
-position = Vector2(12, -296)
+position = Vector2(-157, -71)
+
+[node name="KillPlane" parent="." instance=ExtResource("2_1bvp3")]
+position = Vector2(-209, -222)
+
+[node name="Control" parent="." instance=ExtResource("4_1bvp3")]
+offset_left = 104.0
+offset_top = 44.0
+offset_right = 104.0
+offset_bottom = 44.0
