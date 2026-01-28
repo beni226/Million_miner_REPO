@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 func UpdateInfo():
 	get_node("Title").text = itemName
-	get_node("Des").text = itemDesc + "\n Count:" + str(itemCount)
+	get_node("Des").text = itemDesc 
 	if itemAnim != "":
 		icon.play(itemAnim)
 	

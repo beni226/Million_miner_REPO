@@ -107,49 +107,48 @@ libraries = {
 }
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 111.0
-offset_top = 47.0
-offset_right = 495.0
-offset_bottom = 309.0
+offset_left = 420.0
+offset_top = 131.0
+offset_right = 804.0
+offset_bottom = 241.0
 
 [node name="Title" type="Label" parent="."]
-offset_left = 194.0
-offset_top = 51.0
-offset_right = 385.0
-offset_bottom = 91.0
+offset_left = 503.0
+offset_top = 135.0
+offset_right = 694.0
+offset_bottom = 175.0
 theme_override_fonts/font = ExtResource("2_mrqgh")
 text = "BUFFS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CoinUi" parent="." instance=ExtResource("3_dw5ng")]
-offset_left = 119.0
-offset_top = 60.0
-offset_right = 152.0
-offset_bottom = 78.0
+offset_left = 428.0
+offset_top = 144.0
+offset_right = 461.0
+offset_bottom = 162.0
 
 [node name="close" type="Button" parent="."]
-offset_left = 442.0
-offset_top = 54.0
-offset_right = 492.0
-offset_bottom = 85.0
+offset_left = 751.0
+offset_top = 138.0
+offset_right = 801.0
+offset_bottom = 169.0
 text = "Close"
 
 [node name="ItemInfo" parent="." instance=ExtResource("6_0xmy5")]
 
 [node name="InvContain" type="GridContainer" parent="."]
-offset_left = 149.0
-offset_top = 88.0
-offset_right = 522.0
-offset_bottom = 298.0
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.032
+anchor_right = 0.03
+anchor_bottom = 0.032
+offset_left = 423.44
+offset_top = 151.264
+offset_right = 796.44
+offset_bottom = 215.264
 columns = 6
 script = ExtResource("4_mrqgh")
-
-[node name="root" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [connection signal="animation_finished" from="Anim" to="." method="_on_anim_animation_finished"]
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
