@@ -46,10 +46,5 @@ var items = {
 }
 
 var inventory = {
-	0: {
-		"name": "speed potion",
-		"desc": "speed boost!!!",
-		"cost": 10,
-		"count": 1
-	},
+	
 }	

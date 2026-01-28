@@ -1,27 +1,35 @@
 extends GridContainer
 
 @onready var item = preload("res://slot.tscn")
-var invsize = 24
 func _ready():
 	#load slots in
-	for i in invsize:
-		var itemTemp = item.instantiate()
-		add_child(itemTemp)
+	var invsize = 5
+	for i in range(invsize):
+		add_child(item.instantiate())
 	#fill in items into slots	
-	fillInventorySlots()
+		fillInventorySlots()
 	
 func fillInventorySlots():
-	for i in invsize:
-		get_child(i).itemName = ""
-		get_child(i).itemDesc = ""
-		get_child(i).itemCost = 0
-		get_child(i).itemCount = 0
-		get_child(i).hasItem = false
-		
-	for i in Global.inventory:
-		get_child(i).itemName = Global.inventory[i]["name"]
-		get_child(i).itemDesc = Global.inventory[i]["desc"]
-		get_child(i).itemCost = Global.inventory[i]["cost"]
-		get_child(i).itemCount = Global.inventory[i]["count"]
-		get_child(i).get_node("Icon").play(Global.inventory[i]["name"])
-		get_child(i).hasItem = true
+	for i in range(get_child_count()):
+		var slot = get_child(i)
+		slot.itemName = ""
+		slot.itemDesc = ""
+		slot.itemCost = 0
+		slot.itemCount = 0
+		slot.hasItem = false
+		slot.get_node("Icon").visible = false
+
+	var slot_index = 0
+	for key in Global.inventory.keys():
+		if slot_index >= get_child_count():
+				break
+		var slot = get_child(slot_index)
+		var item = Global.inventory[key]
+		slot.itemName = item["name"]
+		slot.itemDesc = item["desc"]
+		slot.itemCost = item["cost"]
+		slot.itemCount = item["count"]
+		slot.hasItem = true
+		slot.get_node("Icon").visible = true
+		slot.get_node("Icon").play(item["name"])
+		slot_index += 1

@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="2_mrqgh"]
 [ext_resource type="PackedScene" uid="uid://cvfmd14tl8wan" path="res://collectables/coin_ui.tscn" id="3_dw5ng"]
 [ext_resource type="Script" uid="uid://c8n6d72lao1dw" path="res://inv_contain.gd" id="4_mrqgh"]
-[ext_resource type="PackedScene" uid="uid://bas01j3t2idr7" path="res://slot.tscn" id="5_dw5ng"]
+[ext_resource type="PackedScene" uid="uid://855ls3vtsbgu" path="res://ItemInfo.tscn" id="6_0xmy5"]
 
 [sub_resource type="Animation" id="Animation_e7rdd"]
 length = 0.001
@@ -95,6 +95,7 @@ _data = {
 }
 
 [node name="Inventory" type="CanvasLayer"]
+process_mode = 3
 offset = Vector2(0, -400)
 transform = Transform2D(1, 0, 0, 1, 0, -400)
 script = ExtResource("1_5tt2m")
@@ -111,20 +112,13 @@ offset_top = 47.0
 offset_right = 495.0
 offset_bottom = 309.0
 
-[node name="close" type="Button" parent="."]
-offset_left = 442.0
-offset_top = 54.0
-offset_right = 492.0
-offset_bottom = 85.0
-text = "Close"
-
 [node name="Title" type="Label" parent="."]
 offset_left = 194.0
 offset_top = 51.0
 offset_right = 385.0
 offset_bottom = 91.0
 theme_override_fonts/font = ExtResource("2_mrqgh")
-text = "Inventory"
+text = "BUFFS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -134,6 +128,15 @@ offset_top = 60.0
 offset_right = 152.0
 offset_bottom = 78.0
 
+[node name="close" type="Button" parent="."]
+offset_left = 442.0
+offset_top = 54.0
+offset_right = 492.0
+offset_bottom = 85.0
+text = "Close"
+
+[node name="ItemInfo" parent="." instance=ExtResource("6_0xmy5")]
+
 [node name="InvContain" type="GridContainer" parent="."]
 offset_left = 149.0
 offset_top = 88.0
@@ -142,7 +145,11 @@ offset_bottom = 298.0
 columns = 6
 script = ExtResource("4_mrqgh")
 
-[node name="slot" parent="InvContain" instance=ExtResource("5_dw5ng")]
-layout_mode = 2
+[node name="root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
+[connection signal="animation_finished" from="Anim" to="." method="_on_anim_animation_finished"]
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]

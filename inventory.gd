@@ -18,5 +18,6 @@ func _input(event):
 			get_node("Anim").play("TransIn")
 		elif self.offset.y == 0:
 			get_node("Anim").play("TransOut")
+		get_node("InvContain").fillInventorySlots()
 		
 	

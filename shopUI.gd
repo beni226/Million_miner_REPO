@@ -23,6 +23,7 @@ func _on_prev_pressed() -> void:
 	
 func _on_button_pressed() -> void:
 	var hasItem = false
+	print(Global.inventory)
 	if Global.gold >= Global.items[currItem]["cost"]:
 		for i in Global.inventory.keys():
 			if Global.inventory[i]["name"] == Global.items[currItem]["name"]:
@@ -32,7 +33,7 @@ func _on_button_pressed() -> void:
 		if not hasItem:
 			var tempDic = Global.items[currItem].duplicate()
 			tempDic["count"] = 1
-			var new_key = Global.inventory.keys().max() + 1
+			var new_key: int = 0 if Global.inventory.is_empty() else Global.inventory.keys().max() + 1
 			Global.inventory[new_key] = tempDic
 		Global.gold -= Global.items[currItem]["cost"]
 	print(Global.inventory)
