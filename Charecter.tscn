@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d3ecfhpsjrrms"]
+[gd_scene load_steps=32 format=3 uid="uid://d3ecfhpsjrrms"]
 
 [ext_resource type="Script" uid="uid://dci7aa22urrib" path="res://character_body_2d.gd" id="1_wfi5a"]
 [ext_resource type="Texture2D" uid="uid://yj6a7frufwod" path="res://sprites/knight.png" id="2_15ce2"]
@@ -17,6 +17,22 @@ region = Rect2(64, 160, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8uots"]
 atlas = ExtResource("2_15ce2")
 region = Rect2(192, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfi5a"]
+atlas = ExtResource("2_15ce2")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15ce2"]
+atlas = ExtResource("2_15ce2")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh8no"]
+atlas = ExtResource("2_15ce2")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na52m"]
+atlas = ExtResource("2_15ce2")
+region = Rect2(96, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mbr7j"]
 atlas = ExtResource("2_15ce2")
@@ -113,6 +129,23 @@ animations = [{
 "loop": true,
 "name": &"crouch",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfi5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15ce2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh8no")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na52m")
+}],
+"loop": true,
+"name": &"death",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -230,9 +263,9 @@ shape = SubResource("RectangleShape2D_6l31h")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(29, -49)
 sprite_frames = SubResource("SpriteFrames_nbu5r")
-animation = &"moveR"
+animation = &"death"
 autoplay = "idle"
-frame_progress = 0.117872
+frame_progress = 0.0181046
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(29, -47)
