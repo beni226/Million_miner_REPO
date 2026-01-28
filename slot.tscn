@@ -436,7 +436,7 @@ offset_bottom = 32.0
 script = ExtResource("1_baieg")
 
 [node name="Icon" type="AnimatedSprite2D" parent="."]
-position = Vector2(24, 16)
+position = Vector2(26, 26)
 scale = Vector2(0.956177, 0.996338)
 sprite_frames = SubResource("SpriteFrames_ltvq2")
 animation = &"speed potion"
