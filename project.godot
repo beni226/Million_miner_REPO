@@ -11,9 +11,16 @@ config_version=5
 [application]
 
 config/name="Million_Miner"
-run/main_scene="uid://bq5u0drpho201"
-config/features=PackedStringArray("4.4", "Forward Plus")
+run/main_scene="uid://wfmpoff0t8ao"
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+<<<<<<<Updatedupstreamrun/main_scene="uid://bq5u0drpho201"
+<<<<<<<Updatedupstream<<<<<<<Updatedupstream<<<<<<<Updatedupstreamrun/main_scene="uid://bq5u0drpho201"
+<<<<<<<Updatedupstream<<<<<<<Updatedupstream<<<<<<<Updatedupstream<<<<<<<Updatedupstreamrun/main_scene="uid://bq5u0drpho201"
+
+[global_group]
+
+lightSources=""
 
 [autoload]
 

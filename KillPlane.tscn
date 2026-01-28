@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://proshf48j35h" path="res://killPlane.gd" id="1_1l0fb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kk5r"]
-size = Vector2(1535.5, 191)
+size = Vector2(310.875, 163.5)
 
 [node name="KillPlane" type="Node2D"]
 
@@ -12,8 +12,12 @@ collision_layer = 2
 script = ExtResource("1_1l0fb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(641.25, 138)
+position = Vector2(726, 196)
 shape = SubResource("RectangleShape2D_5kk5r")
 debug_color = Color(0.764957, 0.24104, 0.927145, 0.42)
 
+[node name="Timer" type="Timer" parent="Area2D"]
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]
