@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	if (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_up")):
 		if jump_count < MAX_JUMPS:
 			velocity.y = JUMP_VELOCITY
-			jump_count += 1	
+			jump_count += 1
 		if is_on_floor():
 			jump_count = 0
 		
@@ -44,11 +44,6 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.flip_h = false   
 
 
-
-
-
-
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
@@ -60,44 +55,45 @@ func _physics_process(delta: float) -> void:
 	#Digging action comand
 	
 	if Input.is_action_just_pressed("dig"):
-		dig()
+		digDown()
 	if Input.is_action_just_pressed("digL"):
-		dig2()
+		digLeft()
 	if Input.is_action_just_pressed("digR"):
-		dig3()
+		digRight()
 	if Input.is_action_just_pressed("digU"):
-		dig4()
+		digUp()
 
 	move_and_slide()
-	#Digging action script
-func dig():
-	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
-	var local_pos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(local_pos + Vector2(25,-35)) # Offset to dig below player
-	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-	tilemap.set_cell(1,cell,-1)
 
-func dig2():
-	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
-	var local_pos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(local_pos + Vector2(15, -45))
-	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-	tilemap.set_cell(1,cell,-1)	
+@onready var tilemap = $"../TileMap"
 
-func dig3():
-	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
+#Digging action scripts
+func digDown():
 	var local_pos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(local_pos + Vector2(47, -45)) # Offset to dig below player
+	var cell = tilemap.local_to_map(local_pos + Vector2(0,12))
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-	tilemap.set_cell(1,cell,-1)	
-func dig4():
-	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
+
+func digLeft():
 	var local_pos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(local_pos + Vector2(25,-65)) # Offset to dig below player
+	var cell = tilemap.local_to_map(local_pos + Vector2(-6,0)) # Offset to dig left of the player
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-	tilemap.set_cell(1,cell,-1)
-	
-	
+
+
+func digRight():
+	var local_pos = tilemap.to_local(global_position)
+	var cell = tilemap.local_to_map(local_pos + Vector2(12,0)) # Offset to dig right of the player
+	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+
+func digUp():
+	var local_pos = tilemap.to_local(global_position)
+	var cell = tilemap.local_to_map(local_pos + Vector2(0,-6)) # Offset to dig below player
+	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+
+
+func giveCoins():
+	pass
+
+
 func _ready():
 	add_to_group("players")
 
