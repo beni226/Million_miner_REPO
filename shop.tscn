@@ -569,6 +569,27 @@ text = "Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="forw" type="Button" parent="Control"]
+offset_left = 580.0
+offset_top = 183.0
+offset_right = 622.0
+offset_bottom = 230.0
+text = ">"
+
+[node name="prev" type="Button" parent="Control"]
+offset_left = 339.0
+offset_top = 181.0
+offset_right = 381.0
+offset_bottom = 228.0
+text = "<"
+
+[node name="Button" type="Button" parent="Control"]
+offset_left = 409.0
+offset_top = 312.0
+offset_right = 543.0
+offset_bottom = 359.0
+text = "Buy"
+
 [node name="desc" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 329.0
@@ -580,30 +601,6 @@ text = "Item text"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-
-[node name="forw" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 580.0
-offset_top = 183.0
-offset_right = 622.0
-offset_bottom = 230.0
-text = ">"
-
-[node name="prev" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 339.0
-offset_top = 181.0
-offset_right = 381.0
-offset_bottom = 228.0
-text = "<"
-
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 409.0
-offset_top = 312.0
-offset_right = 543.0
-offset_bottom = 359.0
-text = "Buy"
 
 [node name="CoinUi" parent="Control" instance=ExtResource("9_p5a0g")]
 offset_left = 127.0

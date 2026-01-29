@@ -12,12 +12,8 @@ config_version=5
 
 config/name="Million_Miner"
 run/main_scene="uid://bq5u0drpho201"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
-
-[global_group]
-
-lightSources=""
 
 [autoload]
 
@@ -25,6 +21,10 @@ CoinsCollect="*res://collectables/coinsCollect.gd"
 Coins="*res://collectables/coins.gd"
 TileTest="*res://collectables/tile_test.gd"
 Global="*res://Global.gd"
+
+[global_group]
+
+lightSources=""
 
 [input]
 

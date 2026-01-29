@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://0q0n7ig5xpbh"]
+[gd_scene load_steps=11 format=3 uid="uid://0q0n7ig5xpbh"]
 
 [ext_resource type="Script" uid="uid://t8v4ejuhny04" path="res://inventory.gd" id="1_5tt2m"]
 [ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="2_mrqgh"]
@@ -94,6 +94,8 @@ _data = {
 &"TransOut": SubResource("Animation_viryw")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw5ng"]
+
 [node name="Inventory" type="CanvasLayer"]
 process_mode = 3
 offset = Vector2(0, -400)
@@ -111,6 +113,7 @@ offset_left = 420.0
 offset_top = 131.0
 offset_right = 804.0
 offset_bottom = 241.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dw5ng")
 
 [node name="Title" type="Label" parent="."]
 offset_left = 503.0
