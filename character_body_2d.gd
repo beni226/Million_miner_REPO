@@ -66,33 +66,47 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 @onready var tilemap = $"../TileMap"
+@export var coinsPacked : PackedScene
+var randomNum = RandomNumberGenerator.new()
 
 #Digging action scripts
 func digDown():
 	var local_pos = tilemap.to_local(global_position)
 	var cell = tilemap.local_to_map(local_pos + Vector2(0,12))
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+	giveCoins()
 
 func digLeft():
 	var local_pos = tilemap.to_local(global_position)
 	var cell = tilemap.local_to_map(local_pos + Vector2(-6,0)) # Offset to dig left of the player
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-
+	giveCoins()
 
 func digRight():
 	var local_pos = tilemap.to_local(global_position)
 	var cell = tilemap.local_to_map(local_pos + Vector2(12,0)) # Offset to dig right of the player
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+	giveCoins()
 
 func digUp():
 	var local_pos = tilemap.to_local(global_position)
 	var cell = tilemap.local_to_map(local_pos + Vector2(0,-12)) # Offset to dig below player
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+	giveCoins()
 
 
 func giveCoins():
-	pass
+	var localPos = tilemap.to_local(global_position)
+	
+	for i in range(randomNum.randi_range(1,5)):
+		var newCoin = coinsPacked.instantiate()
+		add_child(newCoin)
+		newCoin.global_position = localPos + Vector2(randomNum.randi_range(-10,10), randomNum.randi_range(-10,10))
 
+
+func _on_coin_collection_body_entered(body):
+	if body.is_in_group("Loot"):
+		body.queue_free()
 
 func _ready():
 	add_to_group("players")

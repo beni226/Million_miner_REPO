@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var noise_height_text : NoiseTexture2D
+
 var noise : Noise
 var noiseThreshold : float = 0.2
 
@@ -19,6 +20,7 @@ var source_id = 0
 var dirt_atlas = Vector2i(0,1) # location on tileset
 var question_atlas = Vector2i(0,2)
 var exclamation_atlas = Vector2i(1,2)
+
 
 func _ready():
 	noise = noise_height_text.noise
@@ -41,10 +43,3 @@ func generateWorld():
 				# places exclamation block at a lower chance
 				if randomNum.randf() < 0.008:
 					tile_map.set_cell(0, Vector2(x,y), source_id, exclamation_atlas)
-
-
-
-
-
-func _on_tile_map_changed() -> void:
-	pass # Replace with function body.
