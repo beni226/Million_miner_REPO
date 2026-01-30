@@ -41,3 +41,10 @@ func generateWorld():
 				# places exclamation block at a lower chance
 				if randomNum.randf() < 0.008:
 					tile_map.set_cell(0, Vector2(x,y), source_id, exclamation_atlas)
+
+
+
+
+
+func _on_tile_map_changed() -> void:
+	pass # Replace with function body.

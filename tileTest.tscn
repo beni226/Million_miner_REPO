@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bq5u0drpho201"]
+[gd_scene load_steps=41 format=3 uid="uid://bq5u0drpho201"]
 
 [ext_resource type="Script" uid="uid://b64xudcfxy7xp" path="res://proc_gen.gd" id="1_b45jg"]
 [ext_resource type="Texture2D" uid="uid://ek22tfl6dl44" path="res://sprites/world_tileset.png" id="1_stgeq"]
@@ -17,11 +17,6 @@ fractal_gain = 0.8
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s766h"]
 noise = SubResource("FastNoiseLite_mbr7j")
-
-[sub_resource type="Environment" id="Environment_mbr7j"]
-background_mode = 3
-glow_enabled = true
-glow_blend_mode = 1
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mbr7j"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -54,11 +49,11 @@ texture = ExtResource("1_stgeq")
 9:1/0 = 0
 9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.539576, -8, -1.61873)
 0:2/0 = 0
-0:2/0/modulate = Color(1.5790963, 1.5790963, 1.5790963, 1)
+0:2/0/modulate = Color(1.5791, 1.5791, 1.5791, 1)
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:2/0/custom_data_0 = true
 1:2/0 = 0
-1:2/0/modulate = Color(1.5790963, 1.5790963, 1.5790963, 1)
+1:2/0/modulate = Color(1.5791, 1.5791, 1.5791, 1)
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:2/0/custom_data_0 = true
 2:2/0 = 0
@@ -452,9 +447,9 @@ shader = ExtResource("5_mbr7j")
 shader_parameter/lights = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/numOfLights = 1
 shader_parameter/modulateColor = Color(0.105882, 0.00392157, 0.188235, 0.952941)
-shader_parameter/bandRadius = 96.0
+shader_parameter/bandRadius = 140.0
 shader_parameter/bandStrength = 0.3
-shader_parameter/lightRadius = 148.0
+shader_parameter/lightRadius = 200.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_5t7h2"]
 font = ExtResource("7_s766h")
@@ -464,11 +459,8 @@ position = Vector2(-8, 21)
 script = ExtResource("1_b45jg")
 noise_height_text = SubResource("NoiseTexture2D_s766h")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_mbr7j")
-
 [node name="TileMap" type="TileMap" parent="."]
-self_modulate = Color(0.40832946, 0.40832946, 0.40832946, 1)
+self_modulate = Color(0.408329, 0.408329, 0.408329, 1)
 position = Vector2(8, -21)
 tile_set = SubResource("TileSet_6l31h")
 format = 2
@@ -499,20 +491,19 @@ position = Vector2(1, 3)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
-visible = false
 
 [node name="LevelLighting" type="ColorRect" parent="CanvasLayer"]
 z_index = 1
 material = SubResource("ShaderMaterial_5t7h2")
 custom_minimum_size = Vector2(1000, 1000)
 anchors_preset = -1
-anchor_left = -0.09201389
-anchor_top = -0.20524701
-anchor_right = 2.1101112
-anchor_bottom = 3.3884323
+anchor_left = -0.0920139
+anchor_top = -0.205247
+anchor_right = 2.11011
+anchor_bottom = 3.38843
 offset_left = -633.0
-offset_top = -674.99994
-offset_right = 186.15186
+offset_top = -675.0
+offset_right = 186.152
 offset_bottom = 50.2959
 grow_horizontal = 2
 grow_vertical = 0
@@ -525,7 +516,7 @@ offset_left = -237.0
 offset_top = -373.0
 offset_right = 2250.0
 offset_bottom = 2014.0
-color = Color(0.51459414, 0.25756592, 0.028589666, 1)
+color = Color(0.514594, 0.257566, 0.0285897, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 40.0
