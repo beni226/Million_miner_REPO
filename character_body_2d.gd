@@ -86,7 +86,7 @@ func digRight():
 
 func digUp():
 	var local_pos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(local_pos + Vector2(0,-6)) # Offset to dig below player
+	var cell = tilemap.local_to_map(local_pos + Vector2(0,-12)) # Offset to dig below player
 	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
 
 
