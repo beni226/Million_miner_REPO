@@ -1,0 +1,157 @@
+[gd_scene load_steps=11 format=3 uid="uid://0q0n7ig5xpbh"]
+
+[ext_resource type="Script" uid="uid://t8v4ejuhny04" path="res://inventory.gd" id="1_5tt2m"]
+[ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="2_mrqgh"]
+[ext_resource type="PackedScene" uid="uid://cvfmd14tl8wan" path="res://collectables/coin_ui.tscn" id="3_dw5ng"]
+[ext_resource type="Script" uid="uid://c8n6d72lao1dw" path="res://inv_contain.gd" id="4_mrqgh"]
+[ext_resource type="PackedScene" uid="uid://855ls3vtsbgu" path="res://ItemInfo.tscn" id="6_0xmy5"]
+
+[sub_resource type="Animation" id="Animation_e7rdd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -400)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_rplqf"]
+resource_name = "TransIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -500), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_viryw"]
+resource_name = "TransOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.01, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_blqjs"]
+_data = {
+&"RESET": SubResource("Animation_e7rdd"),
+&"TransIn": SubResource("Animation_rplqf"),
+&"TransOut": SubResource("Animation_viryw")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw5ng"]
+
+[node name="Inventory" type="CanvasLayer"]
+process_mode = 3
+offset = Vector2(0, -400)
+transform = Transform2D(1, 0, 0, 1, 0, -400)
+script = ExtResource("1_5tt2m")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Panel")
+libraries = {
+&"": SubResource("AnimationLibrary_blqjs")
+}
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 420.0
+offset_top = 131.0
+offset_right = 804.0
+offset_bottom = 241.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dw5ng")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 503.0
+offset_top = 135.0
+offset_right = 694.0
+offset_bottom = 175.0
+theme_override_fonts/font = ExtResource("2_mrqgh")
+text = "BUFFS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinUi" parent="." instance=ExtResource("3_dw5ng")]
+offset_left = 428.0
+offset_top = 144.0
+offset_right = 461.0
+offset_bottom = 162.0
+
+[node name="close" type="Button" parent="."]
+offset_left = 751.0
+offset_top = 138.0
+offset_right = 801.0
+offset_bottom = 169.0
+text = "Close"
+
+[node name="ItemInfo" parent="." instance=ExtResource("6_0xmy5")]
+
+[node name="InvContain" type="GridContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.032
+anchor_right = 0.03
+anchor_bottom = 0.032
+offset_left = 423.44
+offset_top = 151.264
+offset_right = 796.44
+offset_bottom = 215.264
+columns = 6
+script = ExtResource("4_mrqgh")
+
+[connection signal="animation_finished" from="Anim" to="." method="_on_anim_animation_finished"]
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]

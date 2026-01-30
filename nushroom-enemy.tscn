@@ -1,9 +1,9 @@
-[gd_scene load_steps=39 format=3 uid="uid://0u7vct2b3jkx"]
+[gd_scene load_steps=39 format=3 uid="uid://bt8y5gfnlt2lm"]
 
-[ext_resource type="Texture2D" uid="uid://5rf80gppcqc7" path="res://sprites/Forest_Monsters_FREE/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="1_7qijm"]
-[ext_resource type="Script" uid="uid://efgwnkjarkiw" path="res://nushroom_enemy.gd" id="1_ooyft"]
-[ext_resource type="Texture2D" uid="uid://bn0ekb68g7gqm" path="res://sprites/Forest_Monsters_FREE/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Die.png" id="2_ooyft"]
-[ext_resource type="Texture2D" uid="uid://bv4j8axdu4yp3" path="res://sprites/Forest_Monsters_FREE/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Run.png" id="3_twe8m"]
+[ext_resource type="Texture2D" path="res://sprites/Forest_Monsters_FREE/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="1_7qijm"]
+[ext_resource type="Script" path="res://nushroom_enemy.gd" id="1_ooyft"]
+[ext_resource type="Texture2D" path="res://sprites/Forest_Monsters_FREE/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Die.png" id="2_ooyft"]
+[ext_resource type="Texture2D" path="res://sprites/Forest_Monsters_FREE/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Run.png" id="3_twe8m"]
 [ext_resource type="PackedScene" uid="uid://d0c41tswne5dx" path="res://KillPlane.tscn" id="5_twe8m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bpu7y"]
