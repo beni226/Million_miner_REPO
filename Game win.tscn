@@ -1,3 +1,50 @@
-[gd_scene format=3 uid="uid://bijl6g8cfxb2e"]
+[gd_scene load_steps=3 format=3 uid="uid://bijl6g8cfxb2e"]
+
+[ext_resource type="Script" uid="uid://cx5ssg7ybw2hd" path="res://game_win.gd" id="1_6e0j5"]
+[ext_resource type="PackedScene" uid="uid://cvfmd14tl8wan" path="res://collectables/coin_ui.tscn" id="1_rf4lh"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_6e0j5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -2.0
+offset_right = 1151.0
+offset_bottom = 648.0
+theme_override_font_sizes/font_size = 64
+text = "You Made it!
+Coins Collected:"
+horizontal_alignment = 1
+
+[node name="CoinUi" parent="Label" instance=ExtResource("1_rf4lh")]
+offset_left = 404.0
+offset_top = 203.0
+offset_right = 474.0
+offset_bottom = 231.0
+scale = Vector2(5, 5)
+
+[node name="play again" type="Button" parent="."]
+offset_left = 404.0
+offset_top = 329.0
+offset_right = 731.0
+offset_bottom = 425.0
+theme_override_font_sizes/font_size = 64
+text = "Play Again"
+
+[node name="quit" type="Button" parent="."]
+offset_left = 462.0
+offset_top = 438.0
+offset_right = 673.0
+offset_bottom = 534.0
+theme_override_font_sizes/font_size = 64
+text = "Quit"
+
+[node name="leaderBoard" type="Button" parent="."]
+offset_left = 285.0
+offset_top = 547.0
+offset_right = 870.0
+offset_bottom = 643.0
+theme_override_font_sizes/font_size = 64
+text = "View leaderboard"
+
+[connection signal="pressed" from="play again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

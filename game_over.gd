@@ -7,3 +7,5 @@ func _on_respawn_pressed() -> void:
 #When quit button is pressed it will end game
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+	
+#Add leader board code here
