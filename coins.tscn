@@ -1,6 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://qr1qucv3k3it"]
+[gd_scene load_steps=17 format=3 uid="uid://rkredgx766jo"]
 
-[ext_resource type="Script" uid="uid://8f0vy0fq3bcj" path="res://coins.gd" id="1_665jj"]
+[ext_resource type="Script" uid="uid://brh8h7yl0vdok" path="res://collectables/coins.gd" id="1_665jj"]
 [ext_resource type="Texture2D" uid="uid://vq32lxg88kkf" path="res://sprites/coin.png" id="2_88f8t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xskjn"]
@@ -96,9 +96,9 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_acp67"]
-radius = 6.0
+radius = 4.0
 
-[node name="Coin" type="RigidBody2D" groups=["Loot"]]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_665jj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -114,4 +114,4 @@ position = Vector2(2, 3)
 position = Vector2(-2, -4)
 shape = SubResource("CircleShape2D_acp67")
 
-[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
