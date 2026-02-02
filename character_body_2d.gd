@@ -70,24 +70,32 @@ func _physics_process(delta: float) -> void:
 @export var coinsPacked : PackedScene
 
 var isLuckyBlockData = "luckyBlocks"
+var isSuperBlockData = "superBlock"
 var gold : int = 0
+var blocksBroken : int = 0
 
 var randomNum = RandomNumberGenerator.new()
 
 #Digging action scripts
 func digDown():
 	var local_pos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(local_pos + Vector2(0,12))
+	var cell = tilemap.local_to_map(local_pos + Vector2(0,12)) # Offset to dig below of the player
 	var tileData : TileData = tilemap.get_cell_tile_data(0, cell)
 	
 	if cell != null:
 		tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+		blocksBroken += 1
 		
 		if tileData:
 			var isLuckyBlock = tileData.get_custom_data(isLuckyBlockData)
+			var isSuperBlock = tileData.get_custom_data(isSuperBlockData)
 				
 			if isLuckyBlock:
 				giveCoins()
+			
+			elif isSuperBlock:
+				giftingCoins()
+
 
 func digLeft():
 	var local_pos = tilemap.to_local(global_position)
@@ -96,12 +104,18 @@ func digLeft():
 
 	if cell != null:
 		tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+		blocksBroken += 1
 		
 		if tileData:
 			var isLuckyBlock = tileData.get_custom_data(isLuckyBlockData)
+			var isSuperBlock = tileData.get_custom_data(isSuperBlockData)
 				
 			if isLuckyBlock:
 				giveCoins()
+			
+			elif isSuperBlock:
+				giftingCoins()
+
 
 func digRight():
 	var local_pos = tilemap.to_local(global_position)
@@ -110,37 +124,55 @@ func digRight():
 
 	if cell != null:
 		tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+		blocksBroken += 1
 		
 		if tileData:
 			var isLuckyBlock = tileData.get_custom_data(isLuckyBlockData)
+			var isSuperBlock = tileData.get_custom_data(isSuperBlockData)
 				
 			if isLuckyBlock:
 				giveCoins()
+			
+			elif isSuperBlock:
+				giftingCoins()
 
 func digUp():
 	var local_pos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(local_pos + Vector2(0,-12)) # Offset to dig below player
+	var cell = tilemap.local_to_map(local_pos + Vector2(0,-12)) # Offset to dig above player
 	var tileData : TileData = tilemap.get_cell_tile_data(0, cell)
 
 	if cell != null:
 		tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+		blocksBroken += 1
 		
 		if tileData:
 			var isLuckyBlock = tileData.get_custom_data(isLuckyBlockData)
+			var isSuperBlock = tileData.get_custom_data(isSuperBlockData)
 				
 			if isLuckyBlock:
 				giveCoins()
-
+			
+			elif isSuperBlock:
+				giftingCoins()
 
 func giveCoins():
-	var localPos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(localPos)
+	var localPos = tilemap.to_local(global_position) 
+	var cell = tilemap.local_to_map(localPos) # cell of the dug tile
 	
-	for i in range(randomNum.randi_range(5,15)):
-		var newCoin = coinsPacked.instantiate()
-		add_child(newCoin)
-		newCoin.global_position = tilemap.map_to_local(cell) + Vector2(randomNum.randi_range(-5,5), randomNum.randi_range(-5,5))
+	for i in range(randomNum.randi_range(5,25)):
+		var newCoin = coinsPacked.instantiate() # new coin instance
+		add_child(newCoin) # add coin instance
+		newCoin.global_position = tilemap.map_to_local(cell) + Vector2(randomNum.randi_range(-3,3), randomNum.randi_range(-3,3))
+
+func giftingCoins():
+	var localPos = tilemap.to_local(global_position) 
+	var cell = tilemap.local_to_map(localPos) # cell of the dug tile
 	
+	for i in range(randomNum.randi_range(15,45)):
+		var newCoin = coinsPacked.instantiate() # new coin instance
+		add_child(newCoin) # add coin instance
+		newCoin.global_position = tilemap.map_to_local(cell) + Vector2(randomNum.randi_range(-3,3), randomNum.randi_range(-3,3))
+
 
 func _ready():
 	add_to_group("players")
@@ -175,3 +207,10 @@ func _restore_collision():
 	
 func _go_to_game_over():
 	get_tree().change_scene_to_file("res://GameOver.tscn")
+
+func final_score():
+	var playerScore = 0
+	
+	playerScore = (gold * 1.5) + blocksBroken
+	
+	print(playerScore)
