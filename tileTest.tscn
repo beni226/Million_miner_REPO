@@ -1,16 +1,14 @@
-[gd_scene load_steps=56 format=3 uid="uid://bq5u0drpho201"]
+[gd_scene load_steps=43 format=3 uid="uid://bq5u0drpho201"]
 
 [ext_resource type="Script" uid="uid://b64xudcfxy7xp" path="res://proc_gen.gd" id="1_b45jg"]
 [ext_resource type="Texture2D" uid="uid://ek22tfl6dl44" path="res://sprites/world_tileset.png" id="1_stgeq"]
 [ext_resource type="Script" uid="uid://dci7aa22urrib" path="res://character_body_2d.gd" id="2_6l31h"]
 [ext_resource type="Texture2D" uid="uid://yj6a7frufwod" path="res://sprites/knight.png" id="3_b45jg"]
-[ext_resource type="Script" uid="uid://bc53fpyyhbkm7" path="res://shop.gd" id="4_8uots"]
-[ext_resource type="PackedScene" uid="uid://huxtk8xxe6w" path="res://shop.tscn" id="4_mbr7j"]
 [ext_resource type="Shader" uid="uid://bisxd7wvdkjta" path="res://lighting.gdshader" id="5_mbr7j"]
-[ext_resource type="Texture2D" uid="uid://7dbtq86tmn4o" path="res://sprites/01-King Human/Idle (78x58).png" id="6_s766h"]
-[ext_resource type="PackedScene" uid="uid://0q0n7ig5xpbh" path="res://inventory.tscn" id="7_5t7h2"]
-[ext_resource type="PackedScene" uid="uid://rkredgx766jo" path="res://coins.tscn" id="7_s766h"]
-[ext_resource type="Script" uid="uid://b2rt254wajrl4" path="res://lighting.gd" id="11_j3o3x"]
+[ext_resource type="Script" uid="uid://b2rt254wajrl4" path="res://lighting.gd" id="6_s766h"]
+[ext_resource type="PackedScene" uid="uid://qr1qucv3k3it" path="res://coins.tscn" id="7_s766h"]
+[ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="8_5t7h2"]
+[ext_resource type="Script" uid="uid://ckbgc2g4bpv85" path="res://hud.gd" id="8_hwh0i"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_mbr7j"]
 noise_type = 0
@@ -225,103 +223,6 @@ physics_layer_0/collision_layer = 1
 custom_data_layer_0/name = "luckyBlocks"
 custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_nj6id")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5t7h2"]
-shader = ExtResource("5_mbr7j")
-shader_parameter/lights = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-shader_parameter/numOfLights = 1
-shader_parameter/modulateColor = Color(0.105882, 0.00392157, 0.188235, 0.952941)
-shader_parameter/bandRadius = 96.0
-shader_parameter/bandStrength = 0.3
-shader_parameter/lightRadius = 148.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oipby"]
-atlas = ExtResource("6_s766h")
-region = Rect2(0, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j0ebr"]
-atlas = ExtResource("6_s766h")
-region = Rect2(78, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e1plt"]
-atlas = ExtResource("6_s766h")
-region = Rect2(156, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xakm3"]
-atlas = ExtResource("6_s766h")
-region = Rect2(234, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7hee1"]
-atlas = ExtResource("6_s766h")
-region = Rect2(312, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nm2l1"]
-atlas = ExtResource("6_s766h")
-region = Rect2(390, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a15x5"]
-atlas = ExtResource("6_s766h")
-region = Rect2(468, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cwdfb"]
-atlas = ExtResource("6_s766h")
-region = Rect2(546, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h1ahn"]
-atlas = ExtResource("6_s766h")
-region = Rect2(624, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7dlkh"]
-atlas = ExtResource("6_s766h")
-region = Rect2(702, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fob78"]
-atlas = ExtResource("6_s766h")
-region = Rect2(780, 0, 78, 58)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_48i8t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oipby")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j0ebr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e1plt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xakm3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7hee1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nm2l1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a15x5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cwdfb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h1ahn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7dlkh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fob78")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiddf"]
-size = Vector2(18.2097, 10.9184)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6l31h"]
 size = Vector2(11, 11)
@@ -539,6 +440,18 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5t7h2"]
+radius = 32.01562
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5t7h2"]
+shader = ExtResource("5_mbr7j")
+shader_parameter/lights = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/numOfLights = 1
+shader_parameter/modulateColor = Color(0.105882, 0.00392157, 0.188235, 0.952941)
+shader_parameter/bandRadius = 140.0
+shader_parameter/bandStrength = 0.3
+shader_parameter/lightRadius = 200.0
+
 [node name="Node2D2" type="Node2D"]
 position = Vector2(-8, 21)
 script = ExtResource("1_b45jg")
@@ -550,7 +463,32 @@ position = Vector2(8, -21)
 tile_set = SubResource("TileSet_6l31h")
 format = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(565, 259)
+script = ExtResource("2_6l31h")
+coinsPacked = ExtResource("7_s766h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.5, 3.5)
+shape = SubResource("RectangleShape2D_6l31h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_nbu5r")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(1, 2)
+scale = Vector2(1.02126, 1.22838)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D" groups=["lightSources"]]
+position = Vector2(1, 3)
+
+[node name="CoinCollection" type="Area2D" parent="CharacterBody2D"]
+disable_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/CoinCollection"]
 position = Vector2(0, 3)
@@ -574,62 +512,28 @@ offset_top = -675.0
 offset_right = 186.152
 offset_bottom = 50.2959
 grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("11_j3o3x")
+grow_vertical = 0
+script = ExtResource("6_s766h")
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("4_8uots")
+[node name="ColorRect" type="ColorRect" parent="Lighting"]
+z_index = -1
+offset_left = -237.0
+offset_top = -373.0
+offset_right = 2250.0
+offset_bottom = 2014.0
+color = Color(0.514594, 0.257566, 0.0285897, 1)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
-position = Vector2(408, -51)
-sprite_frames = SubResource("SpriteFrames_48i8t")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.536338
-flip_h = true
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("8_hwh0i")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(415, -43)
-scale = Vector2(0.794872, 0.844828)
-shape = SubResource("RectangleShape2D_jiddf")
+[node name="coincount" type="Label" parent="HUD"]
+offset_left = 416.0
+offset_top = 204.0
+offset_right = 528.0
+offset_bottom = 220.0
+theme_override_fonts/font = ExtResource("8_5t7h2")
+theme_override_font_sizes/font_size = 16
+text = "Coins: 0"
 
-[node name="shop" parent="Area2D" instance=ExtResource("4_mbr7j")]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(-6, -7)
-script = ExtResource("2_6l31h")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(28.5, -45.5)
-shape = SubResource("RectangleShape2D_6l31h")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(29, -49)
-sprite_frames = SubResource("SpriteFrames_nbu5r")
-animation = &"roll"
-autoplay = "idle"
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(29, -47)
-scale = Vector2(1.02126, 1.22838)
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
-
-[node name="Inventory" parent="CharacterBody2D" instance=ExtResource("7_5t7h2")]
-
-[node name="Marker2D" type="Marker2D" parent="CharacterBody2D" groups=["lightSources"]]
-position = Vector2(29, -46)
-
-[node name="Node2" type="Node" parent="."]
-
-[node name="Node2D2" parent="Node2" instance=ExtResource("7_s766h")]
-position = Vector2(-150, -44)
-
-[node name="Node2D3" parent="Node2" instance=ExtResource("7_s766h")]
-position = Vector2(-129, -44)
-
-[node name="Node2D" parent="Node2" instance=ExtResource("7_s766h")]
-position = Vector2(-176, -43)
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="area_entered" from="CharacterBody2D/CoinCollection" to="CharacterBody2D" method="_on_coin_collection_area_entered"]
