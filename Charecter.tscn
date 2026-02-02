@@ -272,3 +272,11 @@ position = Vector2(29, -47)
 scale = Vector2(1.02126, 1.22838)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 9.0
+offset_top = -81.0
+offset_right = 49.0
+offset_bottom = -58.0
+
+[node name="Timer" type="Timer" parent="Label"]

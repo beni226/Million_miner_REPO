@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://wfmpoff0t8ao"]
+[gd_scene load_steps=6 format=3 uid="uid://wfmpoff0t8ao"]
 
 [ext_resource type="PackedScene" uid="uid://bq5u0drpho201" path="res://tileTest.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://d0c41tswne5dx" path="res://KillPlane.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://hk2e0q3jkfeb" path="res://daanger_zone.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://c11oriwruewhn" path="res://win_zone.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bs1mjbrku4hu" path="res://coins.tscn" id="5_lquwl"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-100, 10)
@@ -11,7 +13,16 @@ position = Vector2(-100, 10)
 position = Vector2(143, 90)
 
 [node name="daangerZone" parent="Node2D" instance=ExtResource("2_h2yge")]
-position = Vector2(-99, -181)
+position = Vector2(-126, -307)
 
 [node name="KillPlane" parent="." instance=ExtResource("2_1bvp3")]
 position = Vector2(-209, -222)
+
+[node name="Area2D" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(162, 83)
+
+[node name="Node2D2" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(216, 47)
+
+[node name="Node2D3" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(259, 40)

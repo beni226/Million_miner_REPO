@@ -6,6 +6,11 @@ const JUMP_VELOCITY = -200.0
 var jump_count = 0
 const MAX_JUMPS = 2
 
+#Game count down
+var game_timer: Timer
+var time_left := 5
+
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -102,7 +107,31 @@ func dig4():
 func _ready():
 	add_to_group("players")
 
+	game_timer = Timer.new()
+	game_timer.wait_time = time_left
+	game_timer.one_shot = true
+	game_timer.autostart = false
+	add_child(game_timer)
+
+	game_timer.timeout.connect(_on_timer_timeout)
+	game_timer.start()
+
 	
+func _on_timer_timeout():
+	win() # add another win sceen
+
+#func _process(_delta):
+	#if game_timer:
+		#time_left = int(game_timer.time_left)
+		#$CanvasLayer/TimerLabel.text = str(time_left)
+
+
+
+#win function
+func win():
+	get_tree().change_scene_to_file("res://Game win.tscn")
+	
+	#call_deferred("_go_to_game_win")
 #Death function
 func die():
 	#$AnimatedSprite2D.play("death")
