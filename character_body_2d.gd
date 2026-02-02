@@ -67,51 +67,91 @@ func _physics_process(delta: float) -> void:
 
 @onready var tilemap = $"../TileMap"
 @export var coinsPacked : PackedScene
+
+var isLuckyBlockData = "luckyBlocks"
+var playerCoins : int = 0
+
 var randomNum = RandomNumberGenerator.new()
 
 #Digging action scripts
 func digDown():
 	var local_pos = tilemap.to_local(global_position)
 	var cell = tilemap.local_to_map(local_pos + Vector2(0,12))
-	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-	giveCoins()
+	var tileData : TileData = tilemap.get_cell_tile_data(0, cell)
+	
+	if cell != null:
+		tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+		
+		if tileData:
+			var isLuckyBlock = tileData.get_custom_data(isLuckyBlockData)
+				
+			if isLuckyBlock:
+				giveCoins()
 
 func digLeft():
 	var local_pos = tilemap.to_local(global_position)
 	var cell = tilemap.local_to_map(local_pos + Vector2(-6,0)) # Offset to dig left of the player
-	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-	giveCoins()
+	var tileData : TileData = tilemap.get_cell_tile_data(0, cell)
+
+	if cell != null:
+		tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+		
+		if tileData:
+			var isLuckyBlock = tileData.get_custom_data(isLuckyBlockData)
+				
+			if isLuckyBlock:
+				giveCoins()
 
 func digRight():
 	var local_pos = tilemap.to_local(global_position)
 	var cell = tilemap.local_to_map(local_pos + Vector2(12,0)) # Offset to dig right of the player
-	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-	giveCoins()
+	var tileData : TileData = tilemap.get_cell_tile_data(0, cell)
+
+	if cell != null:
+		tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+		
+		if tileData:
+			var isLuckyBlock = tileData.get_custom_data(isLuckyBlockData)
+				
+			if isLuckyBlock:
+				giveCoins()
 
 func digUp():
 	var local_pos = tilemap.to_local(global_position)
 	var cell = tilemap.local_to_map(local_pos + Vector2(0,-12)) # Offset to dig below player
-	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-	giveCoins()
+	var tileData : TileData = tilemap.get_cell_tile_data(0, cell)
+
+	if cell != null:
+		tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
+		
+		if tileData:
+			var isLuckyBlock = tileData.get_custom_data(isLuckyBlockData)
+				
+			if isLuckyBlock:
+				giveCoins()
 
 
 func giveCoins():
 	var localPos = tilemap.to_local(global_position)
+	var cell = tilemap.local_to_map(localPos)
 	
-	for i in range(randomNum.randi_range(1,5)):
-		var newCoin = coinsPacked.instantiate()
-		add_child(newCoin)
-		newCoin.global_position = localPos + Vector2(randomNum.randi_range(-10,10), randomNum.randi_range(-10,10))
-
-
-func _on_coin_collection_body_entered(body):
-	if body.is_in_group("Loot"):
-		body.queue_free()
+	
+	#for i in range(randomNum.randi_range(1,5)):
+		#var newCoin = coinsPacked.instantiate()
+		#add_child(newCoin)
+		#newCoin.global_position = cell
+		
+	playerCoins += randomNum.randi_range(5,15)
+	print("its lucky, Coins: ", playerCoins)
 
 func _ready():
 	add_to_group("players")
-
 	
+func _on_coin_collection_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Loot"):
+		playerCoins += 1
+		print(playerCoins)
+
 #Death function
 func die():
 	#$AnimatedSprite2D.play("death")

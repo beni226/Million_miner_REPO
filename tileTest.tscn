@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b2rt254wajrl4" path="res://lighting.gd" id="6_s766h"]
 [ext_resource type="PackedScene" uid="uid://qr1qucv3k3it" path="res://coins.tscn" id="7_s766h"]
 [ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="8_5t7h2"]
+[ext_resource type="Script" uid="uid://ckbgc2g4bpv85" path="res://hud.gd" id="8_hwh0i"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_mbr7j"]
 noise_type = 0
@@ -35,7 +36,6 @@ texture = ExtResource("1_stgeq")
 7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:0/0 = 0
 8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-8:0/0/custom_data_1 = true
 9:0/0 = 0
 9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.539576, -8, -1.61873)
 5:1/0 = 0
@@ -46,7 +46,6 @@ texture = ExtResource("1_stgeq")
 7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:1/0 = 0
 8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-8:1/0/custom_data_1 = true
 9:1/0 = 0
 9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.539576, -8, -1.61873)
 0:2/0 = 0
@@ -223,8 +222,6 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 custom_data_layer_0/name = "luckyBlocks"
 custom_data_layer_0/type = 1
-custom_data_layer_1/name = "unbreakable"
-custom_data_layer_1/type = 1
 sources/0 = SubResource("TileSetAtlasSource_nj6id")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6l31h"]
@@ -455,9 +452,6 @@ shader_parameter/bandRadius = 140.0
 shader_parameter/bandStrength = 0.3
 shader_parameter/lightRadius = 200.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_5t7h2"]
-font = ExtResource("8_5t7h2")
-
 [node name="Node2D2" type="Node2D"]
 position = Vector2(-8, 21)
 script = ExtResource("1_b45jg")
@@ -470,7 +464,7 @@ tile_set = SubResource("TileSet_6l31h")
 format = 2
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(562, 402)
+position = Vector2(565, 259)
 script = ExtResource("2_6l31h")
 coinsPacked = ExtResource("7_s766h")
 
@@ -500,11 +494,11 @@ disable_mode = 1
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_5t7h2")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Lighting" type="CanvasLayer" parent="."]
 layer = -1
 visible = false
 
-[node name="LevelLighting" type="ColorRect" parent="CanvasLayer"]
+[node name="LevelLighting" type="ColorRect" parent="Lighting"]
 z_index = 1
 material = SubResource("ShaderMaterial_5t7h2")
 custom_minimum_size = Vector2(1000, 1000)
@@ -522,7 +516,7 @@ grow_vertical = 0
 script = ExtResource("6_s766h")
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="Lighting"]
 z_index = -1
 offset_left = -237.0
 offset_top = -373.0
@@ -530,20 +524,16 @@ offset_right = 2250.0
 offset_bottom = 2014.0
 color = Color(0.514594, 0.257566, 0.0285897, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 40.0
-offset_top = -1.0
-offset_right = 104.0
-offset_bottom = 27.0
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("8_hwh0i")
 
-[node name="CenterContainer" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_right = 4
+[node name="coincount" type="Label" parent="HUD"]
+offset_left = 416.0
+offset_top = 204.0
+offset_right = 528.0
+offset_bottom = 220.0
+theme_override_fonts/font = ExtResource("8_5t7h2")
+theme_override_font_sizes/font_size = 16
+text = "Coins: 0"
 
-[node name="Label" type="Label" parent="VBoxContainer/CenterContainer"]
-layout_mode = 2
-text = "9999"
-label_settings = SubResource("LabelSettings_5t7h2")
-
-[connection signal="body_entered" from="CharacterBody2D/CoinCollection" to="." method="_on_coin_collection_body_entered"]
+[connection signal="area_entered" from="CharacterBody2D/CoinCollection" to="CharacterBody2D" method="_on_coin_collection_area_entered"]
