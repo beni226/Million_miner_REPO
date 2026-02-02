@@ -25,23 +25,23 @@ var items = {
 	1: {
 		"name": "bomb",
 		"desc": "destory a radius of the map!",
-		"cost": 20
+		"cost":50
 	},
 	2: {
 		"name":"pickaxe upgrade",
 		"desc":"upgrade your pickaxe strength",
-		"cost": 100   
+		"cost": 25   
 	},
 	3: {
-		"name":"torch",
-		"desc":"increases light in the caves",
-		"cost": 35 
-	},
-	4: {
 		"name":"lamp",
 		"desc":"increases light even further",
-		"cost": 100  
+		"cost": 30  
 	},
+	4: {
+		"name":"double jump",
+		"desc":"you can now double jump",
+		"cost": 30 
+	}
 	
 }
 

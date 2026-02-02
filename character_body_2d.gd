@@ -4,9 +4,18 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -200.0
 var jump_count = 0
-const MAX_JUMPS = 2
+const MAX_JUMPS = 1
+var move_speed := 100.0
+const DIG_OFFSET_DOWN  = Vector2(25, -35)
+var bomb2 = Vector2(15,-35)
+var bomb3=Vector2(47,-35)
+const DIG_OFFSET_LEFT  = Vector2(15, -45)
+const DIG_OFFSET_RIGHT = Vector2(47, -45)
+const DIG_OFFSET_UP    = Vector2(25, -65)
 
 
+
+@onready var item = preload("res://slot.tscn")
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -17,12 +26,13 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	if (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_up")):
-		if jump_count < MAX_JUMPS:
-			velocity.y = JUMP_VELOCITY
-			jump_count += 1	
-		if is_on_floor():
-			jump_count = 0
+	if has_item("double jump"):
+		if (Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_up")):
+			if jump_count < MAX_JUMPS:
+				velocity.y = JUMP_VELOCITY
+				jump_count += 1	
+			if is_on_floor():
+				jump_count = 0
 		
 	if Input.is_action_pressed("ui_down") and is_on_floor():
 		$AnimatedSprite2D.play("crouch")
@@ -44,19 +54,13 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("idle")
 		$AnimatedSprite2D.flip_h = false   
 
-
-
-
-
-
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * move_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, move_speed)
 		
 	#Digging action comand
 	
@@ -68,35 +72,54 @@ func _physics_process(delta: float) -> void:
 		dig3()
 	if Input.is_action_just_pressed("digU"):
 		dig4()
+	if has_item("speed potion"):
+		move_speed = 160.0
+	else:
+		move_speed = 100.0
+	if has_item("bomb"):
+		if Input.is_action_just_pressed("bomb"):
+			bomb(DIG_OFFSET_DOWN, bomb2, bomb3)
 
 	move_and_slide()
 	#Digging action script
 func dig():
-	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
-	var local_pos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(local_pos + Vector2(25,-35)) # Offset to dig below player
-	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-	tilemap.set_cell(1,cell,-1)
+	_dig_at_offset(DIG_OFFSET_DOWN)
 
 func dig2():
-	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
-	var local_pos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(local_pos + Vector2(15, -45))
-	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-	tilemap.set_cell(1,cell,-1)	
+	_dig_at_offset(DIG_OFFSET_LEFT)
 
 func dig3():
-	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
-	var local_pos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(local_pos + Vector2(47, -45)) # Offset to dig below player
-	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-	tilemap.set_cell(1,cell,-1)	
+	_dig_at_offset(DIG_OFFSET_RIGHT)
+
 func dig4():
-	var tilemap = get_parent().get_node("TileMap") # Adjust path to your TileMap
+	_dig_at_offset(DIG_OFFSET_UP)
+
+func _dig_at_offset(offset: Vector2):
+	var tilemap = get_parent().get_node("TileMap")
 	var local_pos = tilemap.to_local(global_position)
-	var cell = tilemap.local_to_map(local_pos + Vector2(25,-65)) # Offset to dig below player
-	tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-	tilemap.set_cell(1,cell,-1)
+	var cell = tilemap.local_to_map(local_pos + offset)
+
+	tilemap.set_cell(0, cell, -1)
+	tilemap.set_cell(1, cell, -1)
+
+	if has_item("pickaxe upgrade"):
+		var extra_cell = tilemap.local_to_map(local_pos + offset + Vector2(0, -16))
+		tilemap.set_cell(0, extra_cell, -1)
+		tilemap.set_cell(1, extra_cell, -1)
+func bomb(offset: Vector2, offset2: Vector2, offset3: Vector2):
+	var tilemap = get_parent().get_node("TileMap")
+	var local_pos = tilemap.to_local(global_position)
+	var cell = tilemap.local_to_map(local_pos + offset)
+	var cell1 = tilemap.local_to_map(local_pos + offset2)
+	var cell2 = tilemap.local_to_map(local_pos + offset3)
+
+	tilemap.set_cell(0, cell, -1)
+	tilemap.set_cell(1, cell, -1)
+	tilemap.set_cell(0, cell1, -1)
+	tilemap.set_cell(1, cell1, -1)
+	tilemap.set_cell(0, cell2, -1)
+	tilemap.set_cell(1, cell2, -1)
+
 	
 	
 func _ready():
@@ -129,3 +152,9 @@ func _restore_collision():
 	
 func _go_to_game_over():
 	get_tree().change_scene_to_file("res://GameOver.tscn")
+	
+func has_item(item_name: String) -> bool:
+	for i in Global.inventory.keys():
+		if Global.inventory[i]["name"] == item_name:
+			return true
+	return false
