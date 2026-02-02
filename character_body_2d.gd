@@ -164,6 +164,7 @@ func giveCoins():
 		add_child(newCoin) # add coin instance
 		newCoin.global_position = tilemap.map_to_local(cell) + Vector2(randomNum.randi_range(-3,3), randomNum.randi_range(-3,3))
 
+
 func giftingCoins():
 	var localPos = tilemap.to_local(global_position) 
 	var cell = tilemap.local_to_map(localPos) # cell of the dug tile
