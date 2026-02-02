@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bq5u0drpho201"]
+[gd_scene load_steps=42 format=3 uid="uid://bq5u0drpho201"]
 
 [ext_resource type="Script" uid="uid://b64xudcfxy7xp" path="res://proc_gen.gd" id="1_b45jg"]
 [ext_resource type="Texture2D" uid="uid://ek22tfl6dl44" path="res://sprites/world_tileset.png" id="1_stgeq"]
@@ -6,9 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://yj6a7frufwod" path="res://sprites/knight.png" id="3_b45jg"]
 [ext_resource type="Shader" uid="uid://bisxd7wvdkjta" path="res://lighting.gdshader" id="5_mbr7j"]
 [ext_resource type="Script" uid="uid://b2rt254wajrl4" path="res://lighting.gd" id="6_s766h"]
-[ext_resource type="PackedScene" uid="uid://qr1qucv3k3it" path="res://coins.tscn" id="7_s766h"]
-[ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="8_5t7h2"]
-[ext_resource type="Script" uid="uid://ckbgc2g4bpv85" path="res://hud.gd" id="8_hwh0i"]
+[ext_resource type="PackedScene" uid="uid://rkredgx766jo" path="res://coins.tscn" id="7_s766h"]
+[ext_resource type="PackedScene" uid="uid://dj5m66uqj4ktp" path="res://collectables/coin_ui.tscn" id="8_5t7h2"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_mbr7j"]
 noise_type = 0
@@ -524,16 +523,13 @@ offset_right = 2250.0
 offset_bottom = 2014.0
 color = Color(0.514594, 0.257566, 0.0285897, 1)
 
-[node name="HUD" type="CanvasLayer" parent="."]
-script = ExtResource("8_hwh0i")
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="coincount" type="Label" parent="HUD"]
-offset_left = 416.0
-offset_top = 204.0
-offset_right = 528.0
-offset_bottom = 220.0
-theme_override_fonts/font = ExtResource("8_5t7h2")
-theme_override_font_sizes/font_size = 16
-text = "Coins: 0"
+[node name="CoinUi" parent="UI" instance=ExtResource("8_5t7h2")]
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 43.0
+offset_bottom = 29.0
+scale = Vector2(3, 3)
 
 [connection signal="area_entered" from="CharacterBody2D/CoinCollection" to="CharacterBody2D" method="_on_coin_collection_area_entered"]

@@ -70,7 +70,7 @@ func _physics_process(delta: float) -> void:
 @export var coinsPacked : PackedScene
 
 var isLuckyBlockData = "luckyBlocks"
-var playerCoins : int = 0
+var gold : int = 0
 
 var randomNum = RandomNumberGenerator.new()
 
@@ -136,22 +136,18 @@ func giveCoins():
 	var localPos = tilemap.to_local(global_position)
 	var cell = tilemap.local_to_map(localPos)
 	
+	for i in range(randomNum.randi_range(5,15)):
+		var newCoin = coinsPacked.instantiate()
+		add_child(newCoin)
+		newCoin.global_position = tilemap.map_to_local(cell) + Vector2(randomNum.randi_range(-5,5), randomNum.randi_range(-5,5))
 	
-	#for i in range(randomNum.randi_range(1,5)):
-		#var newCoin = coinsPacked.instantiate()
-		#add_child(newCoin)
-		#newCoin.global_position = cell
-		
-	playerCoins += randomNum.randi_range(5,15)
-	print("its lucky, Coins: ", playerCoins)
 
 func _ready():
 	add_to_group("players")
-	
+
 func _on_coin_collection_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Loot"):
-		playerCoins += 1
-		print(playerCoins)
+		gold += 1
 
 #Death function
 func die():
