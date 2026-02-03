@@ -22,13 +22,6 @@ Coins="*res://collectables/coins.gd"
 TileTest="*res://collectables/tile_test.gd"
 Global="*res://Global.gd"
 
-[autoload]
-
-CoinsCollect="*res://collectables/coinsCollect.gd"
-Coins="*res://collectables/coins.gd"
-TileTest="*res://collectables/tile_test.gd"
-Global="*res://Global.gd"
-
 [global_group]
 
 lightSources=""
