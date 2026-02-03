@@ -4,11 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://ek22tfl6dl44" path="res://sprites/world_tileset.png" id="1_stgeq"]
 [ext_resource type="Script" uid="uid://dci7aa22urrib" path="res://character_body_2d.gd" id="2_6l31h"]
 [ext_resource type="Texture2D" uid="uid://yj6a7frufwod" path="res://sprites/knight.png" id="3_b45jg"]
-[ext_resource type="Script" uid="uid://bc53fpyyhbkm7" path="res://shop.gd" id="4_8uots"]
-[ext_resource type="PackedScene" uid="uid://huxtk8xxe6w" path="res://shop.tscn" id="4_mbr7j"]
+[ext_resource type="PackedScene" uid="uid://dw5adwe33i1hb" path="res://shop.tscn" id="4_mbr7j"]
 [ext_resource type="Shader" uid="uid://bisxd7wvdkjta" path="res://lighting.gdshader" id="5_mbr7j"]
-[ext_resource type="Texture2D" uid="uid://7dbtq86tmn4o" path="res://sprites/01-King Human/Idle (78x58).png" id="6_s766h"]
-[ext_resource type="PackedScene" uid="uid://0q0n7ig5xpbh" path="res://inventory.tscn" id="7_5t7h2"]
+[ext_resource type="PackedScene" uid="uid://r1003ql88qto" path="res://inventory.tscn" id="7_5t7h2"]
 [ext_resource type="PackedScene" uid="uid://bs1mjbrku4hu" path="res://coins.tscn" id="7_s766h"]
 [ext_resource type="Script" uid="uid://b2rt254wajrl4" path="res://lighting.gd" id="11_j3o3x"]
 
@@ -496,5 +494,3 @@ position = Vector2(152, 25)
 
 [node name="Node2D" parent="Node2" instance=ExtResource("7_s766h")]
 position = Vector2(98, 26)
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
