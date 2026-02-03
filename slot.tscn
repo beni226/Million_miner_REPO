@@ -1,6 +1,6 @@
 [gd_scene load_steps=66 format=3 uid="uid://bas01j3t2idr7"]
 
-[ext_resource type="Script" uid="uid://cx20tsw2pxwjw" path="res://slot.gd" id="1_baieg"]
+[ext_resource type="Script" path="res://slot.gd" id="1_baieg"]
 [ext_resource type="Texture2D" uid="uid://dgu5lo7hihfhb" path="res://sprites/bomb_character_o_idle.png" id="1_uw6ar"]
 [ext_resource type="Texture2D" uid="uid://bqk78phrnwc2r" path="res://sprites/bomb_character_o_explode.png" id="2_baieg"]
 [ext_resource type="Texture2D" uid="uid://b27pg4p64uvvw" path="res://sprites/FREE 16x16 Pickaxes/FREE 16x16 Pickaxes/sPickaxe1.png" id="3_sgpot"]

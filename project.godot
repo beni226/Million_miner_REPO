@@ -25,7 +25,6 @@ Global="*res://Global.gd"
 [global_group]
 
 lightSources=""
-Loot=""
 
 [input]
 
@@ -68,4 +67,3 @@ locale/translations=PackedStringArray("res://collectables/coinsCollect.gd.uid")
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-viewport/hdr_2d=true
