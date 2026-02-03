@@ -18,6 +18,15 @@ config/icon="res://icon.svg"
 <<<<<<<Updatedupstream<<<<<<<Updatedupstream<<<<<<<Updatedupstreamrun/main_scene="uid://bq5u0drpho201"
 <<<<<<<Updatedupstream<<<<<<<Updatedupstream<<<<<<<Updatedupstream<<<<<<<Updatedupstreamrun/main_scene="uid://bq5u0drpho201"
 
+[autoload]
+
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+Global="*res://global.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
+
 [global_group]
 
 lightSources=""
