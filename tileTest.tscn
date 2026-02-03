@@ -442,13 +442,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5t7h2"]
-radius = 40.012497
+radius = 40.0125
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5t7h2"]
+resource_local_to_scene = true
 shader = ExtResource("5_mbr7j")
 shader_parameter/lights = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/numOfLights = 1
-shader_parameter/modulateColor = Color(0.105882354, 0.003921569, 0.1882353, 0.95686275)
+shader_parameter/modulateColor = Color(0.105882, 0.00392157, 0.188235, 0.956863)
 shader_parameter/bandRadius = 140.0
 shader_parameter/bandStrength = 0.3
 shader_parameter/lightRadius = 200.0

@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="7_myf4l"]
 [ext_resource type="Texture2D" uid="uid://b21boximcuaga" path="res://sprites/Torch Animated.png" id="8_msgp6"]
 [ext_resource type="FontFile" uid="uid://wmilafscwr2e" path="res://fonts/PixelOperator8.ttf" id="8_p5a0g"]
-[ext_resource type="PackedScene" uid="uid://cvfmd14tl8wan" path="res://collectables/coin_ui.tscn" id="9_p5a0g"]
+[ext_resource type="PackedScene" uid="uid://dj5m66uqj4ktp" path="res://collectables/coin_ui.tscn" id="9_p5a0g"]
 
 [sub_resource type="Animation" id="Animation_e7rdd"]
 length = 0.001
