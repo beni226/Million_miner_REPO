@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="2_mrqgh"]
 [ext_resource type="PackedScene" uid="uid://cvfmd14tl8wan" path="res://collectables/coin_ui.tscn" id="3_dw5ng"]
 [ext_resource type="Script" path="res://inv_contain.gd" id="4_mrqgh"]
-[ext_resource type="PackedScene" uid="uid://855ls3vtsbgu" path="res://ItemInfo.tscn" id="6_0xmy5"]
+[ext_resource type="PackedScene" uid="uid://c75idacl54gt7" path="res://ItemInfo.tscn" id="6_0xmy5"]
 
 [sub_resource type="Animation" id="Animation_e7rdd"]
 length = 0.001

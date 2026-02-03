@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://dw5adwe33i1hb"]
+[gd_scene load_steps=77 format=3 uid="uid://dw5adwe33i1hb"]
 
 [ext_resource type="Script" uid="uid://vqwa1x85itpc" path="res://shopUI.gd" id="1_viryw"]
 [ext_resource type="Texture2D" uid="uid://dgu5lo7hihfhb" path="res://sprites/bomb_character_o_idle.png" id="2_gmb2m"]
