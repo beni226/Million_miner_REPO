@@ -29,6 +29,7 @@ position = Vector2(216, 47)
 position = Vector2(259, 40)
 
 [node name="Control" parent="." instance=ExtResource("4_1bvp3")]
+visible = false
 offset_left = 104.0
 offset_top = 44.0
 offset_right = 104.0
