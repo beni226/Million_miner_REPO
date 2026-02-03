@@ -10,14 +10,14 @@
 [sub_resource type="Gradient" id="Gradient_pm51s"]
 interpolation_mode = 1
 offsets = PackedFloat32Array(0, 0.8125)
-colors = PackedColorArray(0.9773751, 0.8372244, 0.16229862, 1, 0.6252725, 0.37074777, 6.738305e-07, 1)
+colors = PackedColorArray(0.977375, 0.837224, 0.162299, 1, 0.625273, 0.370748, 6.73831e-07, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_yirvy"]
 seed = 3
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oc1l4"]
-noise = SubResource("FastNoiseLite_yirvy")
 color_ramp = SubResource("Gradient_pm51s")
+noise = SubResource("FastNoiseLite_yirvy")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05lsc"]
 texture = ExtResource("2_wgt83")
@@ -412,7 +412,7 @@ animations = [{
 shader = ExtResource("5_6h3bg")
 shader_parameter/lights = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shader_parameter/numOfLights = 1
-shader_parameter/modulateColor = Color(0.1065593, 0.0025937783, 0.18839937, 0.9529412)
+shader_parameter/modulateColor = Color(0.106559, 0.00259378, 0.188399, 0.952941)
 shader_parameter/bandRadius = 96.0
 shader_parameter/bandStrength = 0.3
 shader_parameter/lightRadius = 148.0

@@ -1,7 +1,9 @@
 extends CanvasLayer
 var currItem = 0
 var select = 0
- 
+func _input(event):
+	if event.is_action_pressed("shop"):
+		get_node("Anim").play("TransIn")
 func _on_close_pressed() -> void:
 	get_node("Anim").play("TransOut")
 

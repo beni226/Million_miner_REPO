@@ -1,4 +1,3 @@
-
 shader_type canvas_item;
 
 uniform sampler2D screenTexture : hint_screen_texture, filter_nearest;
@@ -10,7 +9,6 @@ uniform vec4 modulateColor : source_color = vec4(0.0);
 
 uniform float bandRadius = 96.0;
 uniform float bandStrength = 0.3;
-
 uniform float lightRadius = 148.0;
 
 float distance_to_light(vec2 coords) {
