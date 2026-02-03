@@ -1,11 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://0seuwh24v5g0"]
+[gd_scene load_steps=3 format=3 uid="uid://b8r5j4t6gsbj3"]
 
 [ext_resource type="Script" uid="uid://cbxcg0ansiem1" path="res://collectables/coin_ui.gd" id="1_i8ha2"]
 [ext_resource type="Texture2D" uid="uid://vq32lxg88kkf" path="res://sprites/coin.png" id="2_kgjm3"]
-[ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="3_kgjm3"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_7xhfe"]
-font = ExtResource("3_kgjm3")
 
 [node name="CoinUi" type="Control"]
 layout_mode = 3
@@ -26,9 +22,8 @@ stretch_mode = 1
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 12.0
-offset_top = 1.0
+offset_top = -3.0
 offset_right = 32.0
-offset_bottom = 24.0
+offset_bottom = 20.0
 text = "0"
-label_settings = SubResource("LabelSettings_7xhfe")
 horizontal_alignment = 1
