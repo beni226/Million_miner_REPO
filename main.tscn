@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://wfmpoff0t8ao"]
+[gd_scene load_steps=8 format=3 uid="uid://wfmpoff0t8ao"]
 
 [ext_resource type="PackedScene" uid="uid://bq5u0drpho201" path="res://tileTest.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://d0c41tswne5dx" path="res://KillPlane.tscn" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://hk2e0q3jkfeb" path="res://daanger_zone.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bt8y5gfnlt2lm" path="res://nushroom-enemy.tscn" id="3_272bh"]
 [ext_resource type="PackedScene" uid="uid://btq8dn7jg141e" path="res://menu.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bs1mjbrku4hu" path="res://coins.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c11oriwruewhn" path="res://win_zone.tscn" id="6_1bvp3"]
@@ -14,13 +15,16 @@ position = Vector2(-100, 10)
 position = Vector2(143, 90)
 
 [node name="daangerZone" parent="Node2D" instance=ExtResource("2_h2yge")]
-position = Vector2(-157, -71)
+position = Vector2(-433, 447)
+
+[node name="enemy" parent="Node2D" instance=ExtResource("3_272bh")]
+position = Vector2(186, -21)
 
 [node name="KillPlane" parent="." instance=ExtResource("2_1bvp3")]
-position = Vector2(-209, -222)
+position = Vector2(1175, -55)
 
 [node name="Area2D" parent="." instance=ExtResource("6_1bvp3")]
-position = Vector2(162, 83)
+position = Vector2(160, 1627)
 
 [node name="Node2D2" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(216, 47)
