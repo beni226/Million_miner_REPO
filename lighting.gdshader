@@ -1,3 +1,4 @@
+
 shader_type canvas_item;
 
 uniform sampler2D screenTexture : hint_screen_texture, filter_nearest;
