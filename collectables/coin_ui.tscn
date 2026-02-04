@@ -26,9 +26,9 @@ stretch_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 12.0
+offset_left = 13.0
 offset_top = 1.0
-offset_right = 36.0
+offset_right = 37.0
 offset_bottom = 17.0
 text = "0"
 label_settings = SubResource("LabelSettings_6evl8")

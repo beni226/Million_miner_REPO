@@ -2,7 +2,7 @@ extends Node
 
 signal gold_changed(new_gold: int)
 
-var gold: int = 10000:
+var gold: int = 0:
 	set(value):
 		gold = value
 		gold_changed.emit(gold)
