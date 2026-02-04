@@ -8,7 +8,7 @@ line_spacing = 8.0
 font = ExtResource("1_6e0j5")
 font_size = 60
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="WinScreen" type="CanvasLayer"]
 
 [node name="Label" type="Label" parent="."]
 offset_left = -2.0
