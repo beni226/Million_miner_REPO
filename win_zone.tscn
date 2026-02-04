@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c11oriwruewhn"]
+[gd_scene format=3 uid="uid://c11oriwruewhn"]
 
 [ext_resource type="Script" uid="uid://b5hod5kkd8t6p" path="res://winZone.gd" id="1_qvyui"]
 

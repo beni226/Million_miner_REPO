@@ -16,7 +16,7 @@ position = Vector2(91, 4)
 position = Vector2(-34, -163)
 
 [node name="daangerZone" parent="Node2D" unique_id=216820322 instance=ExtResource("2_h2yge")]
-position = Vector2(1070, -150)
+position = Vector2(1048, -157)
 
 [node name="Node2D2" parent="Node2D" unique_id=1069413288 instance=ExtResource("5_lquwl")]
 position = Vector2(642, 874)
@@ -94,13 +94,13 @@ position = Vector2(454, 496)
 position = Vector2(379, 583)
 
 [node name="KillPlane" parent="." unique_id=1813579442 instance=ExtResource("2_1bvp3")]
-position = Vector2(260, -98)
+position = Vector2(278, -73)
 
 [node name="KillPlane2" parent="." unique_id=1939207448 instance=ExtResource("2_1bvp3")]
-position = Vector2(227, 240)
+position = Vector2(248, 270)
 
 [node name="KillPlane3" parent="." unique_id=651701642 instance=ExtResource("2_1bvp3")]
-position = Vector2(77, 442)
+position = Vector2(69, 447)
 
 [node name="KillPlane4" parent="." unique_id=41249719 instance=ExtResource("2_1bvp3")]
 position = Vector2(234, 745)

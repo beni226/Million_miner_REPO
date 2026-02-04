@@ -1,22 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0c41tswne5dx"]
+[gd_scene format=3 uid="uid://d0c41tswne5dx"]
 
 [ext_resource type="Script" uid="uid://proshf48j35h" path="res://killPlane.gd" id="1_1l0fb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kk5r"]
-size = Vector2(310.875, 163.5)
+size = Vector2(229.4375, 119.75)
 
-[node name="KillPlane" type="Node2D"]
+[node name="KillPlane" type="Node2D" unique_id=1301890979]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1402548700]
 collision_layer = 2
 script = ExtResource("1_1l0fb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(726, 196)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1414185080]
+position = Vector2(685.28125, 174.125)
 shape = SubResource("RectangleShape2D_5kk5r")
 debug_color = Color(0.764957, 0.24104, 0.927145, 0.42)
 
-[node name="Timer" type="Timer" parent="Area2D"]
+[node name="Timer" type="Timer" parent="Area2D" unique_id=989915171]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
