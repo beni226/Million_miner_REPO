@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1ls464la4b4y" path="res://name_enterance.gd" id="1_q42lc"]
 [ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="2_wb01v"]
-[ext_resource type="Script" path="res://line_edit.gd" id="3_wb01v"]
+[ext_resource type="Script" uid="uid://b6cbb6hgev36" path="res://line_edit.gd" id="3_wb01v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhgsn"]
 bg_color = Color(0.494118, 0.85098, 0.341176, 1)
