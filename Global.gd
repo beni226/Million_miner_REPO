@@ -13,13 +13,17 @@ func _ready() -> void:
 	"open_scene_on_close": "res://tileTest.tscn"
   	})
 
-var gold: int = 10000:
+var gold: int = 10:
 	set(value):
 		gold = value
 		gold_changed.emit(gold)
 
 func add_gold(amount: int) -> void:
 	self.gold += amount
+	GameState.score += 1
+	print("Coins:", GameState.score)
+
+
 
 func spend_gold(amount: int) -> bool:
 	if gold >= amount:
