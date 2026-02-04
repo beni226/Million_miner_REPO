@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://wfmpoff0t8ao"]
+[gd_scene load_steps=6 format=3 uid="uid://wfmpoff0t8ao"]
 
 [ext_resource type="PackedScene" uid="uid://bq5u0drpho201" path="res://tileTest.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://d0c41tswne5dx" path="res://KillPlane.tscn" id="2_1bvp3"]
@@ -6,230 +6,230 @@
 [ext_resource type="PackedScene" uid="uid://bs1mjbrku4hu" path="res://coins.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c11oriwruewhn" path="res://win_zone.tscn" id="6_1bvp3"]
 
-[node name="Node2D" type="Node2D" unique_id=841337649]
+[node name="Node2D" type="Node2D"]
 position = Vector2(-100, 10)
 
-[node name="Node2D" parent="." unique_id=823122544 instance=ExtResource("1_0xm2m")]
+[node name="Node2D" parent="." instance=ExtResource("1_0xm2m")]
 position = Vector2(91, 4)
 
-[node name="daangerZone2" parent="Node2D" unique_id=152575006 instance=ExtResource("2_h2yge")]
+[node name="daangerZone2" parent="Node2D" instance=ExtResource("2_h2yge")]
 position = Vector2(-34, -163)
 
-[node name="daangerZone" parent="Node2D" unique_id=216820322 instance=ExtResource("2_h2yge")]
+[node name="daangerZone" parent="Node2D" instance=ExtResource("2_h2yge")]
 position = Vector2(1070, -150)
 
-[node name="Node2D2" parent="Node2D" unique_id=1069413288 instance=ExtResource("5_lquwl")]
+[node name="Node2D2" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(642, 874)
 
-[node name="Node2D3" parent="Node2D" unique_id=1789596766 instance=ExtResource("5_lquwl")]
+[node name="Node2D3" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(760, 792)
 
-[node name="Node2D4" parent="Node2D" unique_id=1806147012 instance=ExtResource("5_lquwl")]
+[node name="Node2D4" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(1056, 663)
 
-[node name="Node2D5" parent="Node2D" unique_id=1366704845 instance=ExtResource("5_lquwl")]
+[node name="Node2D5" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(944, 756)
 
-[node name="Node2D6" parent="Node2D" unique_id=1942257719 instance=ExtResource("5_lquwl")]
+[node name="Node2D6" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(591, 1013)
 
-[node name="Node2D7" parent="Node2D" unique_id=1466830923 instance=ExtResource("5_lquwl")]
+[node name="Node2D7" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(816, 954)
 
-[node name="Node2D8" parent="Node2D" unique_id=1415399535 instance=ExtResource("5_lquwl")]
+[node name="Node2D8" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(863, 956)
 
-[node name="Node2D9" parent="Node2D" unique_id=960135598 instance=ExtResource("5_lquwl")]
+[node name="Node2D9" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(736, 909)
 
-[node name="Node2D10" parent="Node2D" unique_id=1053128094 instance=ExtResource("5_lquwl")]
+[node name="Node2D10" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(931, 991)
 
-[node name="Node2D11" parent="Node2D" unique_id=1314028470 instance=ExtResource("5_lquwl")]
+[node name="Node2D11" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(926, 916)
 
-[node name="Node2D12" parent="Node2D" unique_id=1124710003 instance=ExtResource("5_lquwl")]
+[node name="Node2D12" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(752, 991)
 
-[node name="Node2D13" parent="Node2D" unique_id=2127683809 instance=ExtResource("5_lquwl")]
+[node name="Node2D13" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(567, 630)
 
-[node name="Node2D14" parent="Node2D" unique_id=270853452 instance=ExtResource("5_lquwl")]
+[node name="Node2D14" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(783, 672)
 
-[node name="Node2D15" parent="Node2D" unique_id=23425958 instance=ExtResource("5_lquwl")]
+[node name="Node2D15" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(600, 672)
 
-[node name="Node2D16" parent="Node2D" unique_id=1177337866 instance=ExtResource("5_lquwl")]
+[node name="Node2D16" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(689, 623)
 
-[node name="Node2D17" parent="Node2D" unique_id=2051999197 instance=ExtResource("5_lquwl")]
+[node name="Node2D17" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(741, 606)
 
-[node name="Node2D18" parent="Node2D" unique_id=310027339 instance=ExtResource("5_lquwl")]
+[node name="Node2D18" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(814, 425)
 
-[node name="Node2D19" parent="Node2D" unique_id=1608604374 instance=ExtResource("5_lquwl")]
+[node name="Node2D19" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(395, 275)
 
-[node name="Node2D20" parent="Node2D" unique_id=1154938565 instance=ExtResource("5_lquwl")]
+[node name="Node2D20" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(414, 104)
 
-[node name="Node2D21" parent="Node2D" unique_id=1712395960 instance=ExtResource("5_lquwl")]
+[node name="Node2D21" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(269, 146)
 
-[node name="Node2D22" parent="Node2D" unique_id=188474582 instance=ExtResource("5_lquwl")]
+[node name="Node2D22" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(316, 111)
 
-[node name="Node2D23" parent="Node2D" unique_id=1289358139 instance=ExtResource("5_lquwl")]
+[node name="Node2D23" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(496, 402)
 
-[node name="Node2D24" parent="Node2D" unique_id=1967993689 instance=ExtResource("5_lquwl")]
+[node name="Node2D24" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(381, 456)
 
-[node name="Node2D25" parent="Node2D" unique_id=2131204417 instance=ExtResource("5_lquwl")]
+[node name="Node2D25" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(454, 496)
 
-[node name="Node2D26" parent="Node2D" unique_id=1373654219 instance=ExtResource("5_lquwl")]
+[node name="Node2D26" parent="Node2D" instance=ExtResource("5_lquwl")]
 position = Vector2(379, 583)
 
-[node name="KillPlane" parent="." unique_id=1813579442 instance=ExtResource("2_1bvp3")]
+[node name="KillPlane" parent="." instance=ExtResource("2_1bvp3")]
 position = Vector2(260, -98)
 
-[node name="KillPlane2" parent="." unique_id=1939207448 instance=ExtResource("2_1bvp3")]
+[node name="KillPlane2" parent="." instance=ExtResource("2_1bvp3")]
 position = Vector2(227, 240)
 
-[node name="KillPlane3" parent="." unique_id=651701642 instance=ExtResource("2_1bvp3")]
+[node name="KillPlane3" parent="." instance=ExtResource("2_1bvp3")]
 position = Vector2(77, 442)
 
-[node name="KillPlane4" parent="." unique_id=41249719 instance=ExtResource("2_1bvp3")]
+[node name="KillPlane4" parent="." instance=ExtResource("2_1bvp3")]
 position = Vector2(234, 745)
 
-[node name="KillPlane5" parent="." unique_id=300009349 instance=ExtResource("2_1bvp3")]
+[node name="KillPlane5" parent="." instance=ExtResource("2_1bvp3")]
 position = Vector2(67, 1191)
 
-[node name="KillPlane6" parent="." unique_id=1696741404 instance=ExtResource("2_1bvp3")]
+[node name="KillPlane6" parent="." instance=ExtResource("2_1bvp3")]
 position = Vector2(-299, 1092)
 
-[node name="KillPlane7" parent="." unique_id=1232935751 instance=ExtResource("2_1bvp3")]
+[node name="KillPlane7" parent="." instance=ExtResource("2_1bvp3")]
 position = Vector2(-474, 922)
 
-[node name="Area2D" parent="." unique_id=448849868 instance=ExtResource("6_1bvp3")]
+[node name="Area2D" parent="." instance=ExtResource("6_1bvp3")]
 position = Vector2(44, 1565)
 
-[node name="Node2D2" parent="." unique_id=1457255965 instance=ExtResource("5_lquwl")]
+[node name="Node2D2" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(222, 125)
 
-[node name="Node2D3" parent="." unique_id=533423531 instance=ExtResource("5_lquwl")]
+[node name="Node2D3" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(190, 96)
 
-[node name="Node2D4" parent="." unique_id=127292486 instance=ExtResource("5_lquwl")]
+[node name="Node2D4" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(497, 333)
 
-[node name="Node2D5" parent="." unique_id=542777217 instance=ExtResource("5_lquwl")]
+[node name="Node2D5" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(565, 250)
 
-[node name="Node2D6" parent="." unique_id=309506044 instance=ExtResource("5_lquwl")]
+[node name="Node2D6" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(545, 280)
 
-[node name="Node2D7" parent="." unique_id=927414843 instance=ExtResource("5_lquwl")]
+[node name="Node2D7" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(853, 266)
 
-[node name="Node2D8" parent="." unique_id=549726121 instance=ExtResource("5_lquwl")]
+[node name="Node2D8" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(707, 263)
 
-[node name="Node2D9" parent="." unique_id=2027846217 instance=ExtResource("5_lquwl")]
+[node name="Node2D9" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(708, 156)
 
-[node name="Node2D10" parent="." unique_id=408064921 instance=ExtResource("5_lquwl")]
+[node name="Node2D10" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(501, 249)
 
-[node name="Node2D11" parent="." unique_id=1141064147 instance=ExtResource("5_lquwl")]
+[node name="Node2D11" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(610, 144)
 
-[node name="Node2D12" parent="." unique_id=1407365781 instance=ExtResource("5_lquwl")]
+[node name="Node2D12" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(484, 173)
 
-[node name="Node2D13" parent="." unique_id=185497008 instance=ExtResource("5_lquwl")]
+[node name="Node2D13" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(1056, 329)
 
-[node name="Node2D14" parent="." unique_id=525738671 instance=ExtResource("5_lquwl")]
+[node name="Node2D14" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(871, 326)
 
-[node name="Node2D15" parent="." unique_id=2128049237 instance=ExtResource("5_lquwl")]
+[node name="Node2D15" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(705, 475)
 
-[node name="Node2D16" parent="." unique_id=1011540775 instance=ExtResource("5_lquwl")]
+[node name="Node2D16" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(563, 376)
 
-[node name="Node2D17" parent="." unique_id=1599624390 instance=ExtResource("5_lquwl")]
+[node name="Node2D17" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(597, 379)
 
-[node name="Node2D18" parent="." unique_id=1940031542 instance=ExtResource("5_lquwl")]
+[node name="Node2D18" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(1189, 395)
 
-[node name="Node2D19" parent="." unique_id=1702573846 instance=ExtResource("5_lquwl")]
+[node name="Node2D19" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(1171, 396)
 
-[node name="Node2D20" parent="." unique_id=1542921371 instance=ExtResource("5_lquwl")]
+[node name="Node2D20" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(1090, 233)
 
-[node name="Node2D21" parent="." unique_id=927499481 instance=ExtResource("5_lquwl")]
+[node name="Node2D21" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(515, 510)
 
-[node name="Node2D22" parent="." unique_id=1956654127 instance=ExtResource("5_lquwl")]
+[node name="Node2D22" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(516, 424)
 
-[node name="Node2D23" parent="." unique_id=1013398082 instance=ExtResource("5_lquwl")]
+[node name="Node2D23" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(1110, 1341)
 
-[node name="Node2D24" parent="." unique_id=1587566417 instance=ExtResource("5_lquwl")]
+[node name="Node2D24" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(1057, 1389)
 
-[node name="Node2D25" parent="." unique_id=2096106841 instance=ExtResource("5_lquwl")]
+[node name="Node2D25" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(1057, 1453)
 
-[node name="Node2D26" parent="." unique_id=1211498489 instance=ExtResource("5_lquwl")]
+[node name="Node2D26" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(593, 1536)
 
-[node name="Node2D27" parent="." unique_id=606576759 instance=ExtResource("5_lquwl")]
+[node name="Node2D27" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(613, 1485)
 
-[node name="Node2D28" parent="." unique_id=523598831 instance=ExtResource("5_lquwl")]
+[node name="Node2D28" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(675, 1451)
 
-[node name="Node2D29" parent="." unique_id=1466371327 instance=ExtResource("5_lquwl")]
+[node name="Node2D29" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(771, 1474)
 
-[node name="Node2D30" parent="." unique_id=92880923 instance=ExtResource("5_lquwl")]
+[node name="Node2D30" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(1206, 1462)
 
-[node name="Node2D31" parent="." unique_id=224291395 instance=ExtResource("5_lquwl")]
+[node name="Node2D31" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(947, 1467)
 
-[node name="Node2D32" parent="." unique_id=1771263611 instance=ExtResource("5_lquwl")]
+[node name="Node2D32" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(915, 1357)
 
-[node name="Node2D33" parent="." unique_id=123292640 instance=ExtResource("5_lquwl")]
+[node name="Node2D33" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(703, 1305)
 
-[node name="Node2D34" parent="." unique_id=987204635 instance=ExtResource("5_lquwl")]
+[node name="Node2D34" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(897, 1094)
 
-[node name="Node2D35" parent="." unique_id=594381700 instance=ExtResource("5_lquwl")]
+[node name="Node2D35" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(945, 1195)
 
-[node name="Node2D36" parent="." unique_id=417492264 instance=ExtResource("5_lquwl")]
+[node name="Node2D36" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(1032, 1163)
 
-[node name="Node2D37" parent="." unique_id=399615214 instance=ExtResource("5_lquwl")]
+[node name="Node2D37" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(931, 1039)
 
-[node name="Node2D38" parent="." unique_id=633872239 instance=ExtResource("5_lquwl")]
+[node name="Node2D38" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(1133, 1048)
 
-[node name="Node2D39" parent="." unique_id=2088448441 instance=ExtResource("5_lquwl")]
+[node name="Node2D39" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(1171, 1229)
 
-[node name="Node2D40" parent="." unique_id=1808254959 instance=ExtResource("5_lquwl")]
+[node name="Node2D40" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(1206, 1289)

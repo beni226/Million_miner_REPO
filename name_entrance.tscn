@@ -1,11 +1,11 @@
-[gd_scene format=4 uid="uid://h66533u1uk4l"]
+[gd_scene load_steps=10 format=4 uid="uid://h66533u1uk4l"]
 
 [ext_resource type="Script" uid="uid://c1ls464la4b4y" path="res://name_enterance.gd" id="1_q42lc"]
 [ext_resource type="FontFile" uid="uid://b7u5bpxerc6do" path="res://fonts/PixelOperator8-Bold.ttf" id="2_wb01v"]
-[ext_resource type="Script" uid="uid://b6cbb6hgev36" path="res://line_edit.gd" id="3_wb01v"]
+[ext_resource type="Script" path="res://line_edit.gd" id="3_wb01v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhgsn"]
-bg_color = Color(0.49411765, 0.8509804, 0.34117648, 1)
+bg_color = Color(0.494118, 0.85098, 0.341176, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -46,15 +46,7 @@ font_style = 1
 font_weight = 700
 subpixel_positioning = 0
 msdf_pixel_range = 8
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
+msdf_size = 128
 cache/0/16/0/ascent = 14.0
 cache/0/16/0/descent = 2.0
 cache/0/16/0/underline_position = 5.0
@@ -239,7 +231,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[node name="Control" type="Control" unique_id=1180572332]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -248,7 +240,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q42lc")
 
-[node name="Submit" type="Button" parent="." unique_id=42143414]
+[node name="Submit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 42.0
@@ -259,13 +251,13 @@ theme_override_fonts/font = ExtResource("2_wb01v")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lhgsn")
 text = "Submit"
 
-[node name="LineEdit" type="LineEdit" parent="." unique_id=683927006]
+[node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 0
 offset_right = 245.0
 offset_bottom = 32.0
+theme_override_colors/selection_color = Color(0.979002, 0.925077, 0.963801, 1)
+theme_override_colors/font_uneditable_color = Color(0.0337344, 0.0226459, 0.021639, 0.501961)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_uneditable_color = Color(0.03373436, 0.022645937, 0.021638965, 0.5019608)
-theme_override_colors/selection_color = Color(0.9790022, 0.925077, 0.96380097, 1)
 theme_override_fonts/font = SubResource("FontFile_cwb4a")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wb01v")
 placeholder_text = "ENTER NAME:"
