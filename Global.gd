@@ -20,6 +20,10 @@ var gold: int = 10000:
 
 func add_gold(amount: int) -> void:
 	self.gold += amount
+	GameState.score += 1
+	print("Coins:", GameState.score)
+
+
 
 func spend_gold(amount: int) -> bool:
 	if gold >= amount:

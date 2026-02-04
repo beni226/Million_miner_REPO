@@ -15,5 +15,6 @@ func _ready() -> void:
 	print("Connected pressed() for:", submit_btn.name)
 
 func _on_submit_pressed() -> void:
+	GameState.player_name = $LineEdit.text.strip_edges()
 	get_tree().change_scene_to_file("res://main.tscn")
 	print("SUBMIT CLICKED")

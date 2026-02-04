@@ -15,7 +15,7 @@ const DIG_OFFSET_UP    = Vector2(25, -65)
 
 #Game count down
 var game_timer: Timer
-var time_left := 5
+var time_left := 300
 
 
 
@@ -141,7 +141,7 @@ func _ready():
 
 	
 func _on_timer_timeout():
-	win() # add another win sceen
+	die() # add another win sceen
 
 #func _process(_delta):
 	#if game_timer:
