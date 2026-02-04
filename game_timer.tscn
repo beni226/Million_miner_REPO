@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqwt0owvda1xc"]
+
+[ext_resource type="Script" uid="uid://bavakug4pxkbo" path="res://game_timer.gd" id="1_800sx"]
+[ext_resource type="FontFile" uid="uid://ccqp2ls585jox" path="res://fonts/PixelOperator8.ttf" id="2_800sx"]
+[ext_resource type="Texture2D" uid="uid://cd1e28rbag6rj" path="res://sprites/pixeltimer.png" id="3_ypugy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vq63q"]
+font = ExtResource("2_800sx")
+font_size = 24
+
+[node name="game_timer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_800sx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 5.0
+offset_right = 84.0
+offset_bottom = 29.0
+text = "90"
+label_settings = SubResource("LabelSettings_vq63q")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("3_ypugy")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 90.0
+one_shot = true
+autostart = true
