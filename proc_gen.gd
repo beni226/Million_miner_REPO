@@ -8,8 +8,8 @@ var noiseThreshold : float = 0.2
 # size of map, edit numbers for diff ranges, reference for where blocks spawn
 # dirt blocks still need to be placed through tilemap,
 # width and height need to be changed according to dirt blocks
-var width : int = 100
-var height : int = 100
+var width : int = 200
+var height : int = 200
 
 var randomNum = RandomNumberGenerator.new()
 
