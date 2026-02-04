@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqwt0owvda1xc"]
+[gd_scene format=3 uid="uid://bqwt0owvda1xc"]
 
 [ext_resource type="Script" uid="uid://bavakug4pxkbo" path="res://game_timer.gd" id="1_800sx"]
 [ext_resource type="FontFile" uid="uid://ccqp2ls585jox" path="res://fonts/PixelOperator8.ttf" id="2_800sx"]
