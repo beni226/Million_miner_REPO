@@ -454,7 +454,7 @@ shader_parameter/bandRadius = 140.0
 shader_parameter/bandStrength = 0.3
 shader_parameter/lightRadius = 200.0
 
-[node name="Node2D2" type="Node2D"]
+[node name="Caves" type="Node2D"]
 position = Vector2(-8, 21)
 script = ExtResource("1_b45jg")
 noise_height_text = SubResource("NoiseTexture2D_s766h")

@@ -72,7 +72,7 @@ func _physics_process(delta: float) -> void:
 var isLuckyBlockData = "luckyBlocks"
 var isSuperBlockData = "superBlock"
 var gold : int = 0
-var blocksBroken : int = 0
+#var blocksBroken : int = 0
 
 var randomNum = RandomNumberGenerator.new()
 
@@ -84,7 +84,7 @@ func digDown():
 	
 	if cell != null:
 		tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-		blocksBroken += 1
+		#blocksBroken += 1
 		
 		if tileData:
 			var isLuckyBlock = tileData.get_custom_data(isLuckyBlockData)
@@ -104,7 +104,7 @@ func digLeft():
 
 	if cell != null:
 		tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-		blocksBroken += 1
+		#blocksBroken += 1
 		
 		if tileData:
 			var isLuckyBlock = tileData.get_custom_data(isLuckyBlockData)
@@ -124,7 +124,7 @@ func digRight():
 
 	if cell != null:
 		tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-		blocksBroken += 1
+		#blocksBroken += 1
 		
 		if tileData:
 			var isLuckyBlock = tileData.get_custom_data(isLuckyBlockData)
@@ -143,7 +143,7 @@ func digUp():
 
 	if cell != null:
 		tilemap.set_cell(0, cell, -1) # Layer 0, removes the tile
-		blocksBroken += 1
+		#blocksBroken += 1
 		
 		if tileData:
 			var isLuckyBlock = tileData.get_custom_data(isLuckyBlockData)
@@ -209,9 +209,9 @@ func _restore_collision():
 func _go_to_game_over():
 	get_tree().change_scene_to_file("res://GameOver.tscn")
 
-func final_score():
-	var playerScore = 0
-	
-	playerScore = (gold * 1.5) + blocksBroken
-	
-	print(playerScore)
+#func final_score():
+	#var playerScore = 0
+	#
+	#playerScore = (gold * 1.5) + blocksBroken
+	#
+	#print(playerScore)

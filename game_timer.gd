@@ -14,3 +14,6 @@ func time_left_to_play():
 
 func _process(_delta):
 	label.text = "%02d:%02d" % time_left_to_play()
+
+func _on_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://Game win.tscn")
