@@ -10,3 +10,6 @@ func _on_quit_pressed() -> void:
 func _on_play_again_pressed() -> void:
 	get_tree().change_scene_to_file("res://main.tscn")
 	Global.gold = 0
+	
+func _on_leader_board_pressed() -> void:
+	get_tree().change_scene_to_file("res://addons/silent_wolf/Scores/Leaderboard.tscn")

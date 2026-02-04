@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Million_Miner"
 run/main_scene="uid://bq5u0drpho201"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 <<<<<<<Updatedupstreamrun/main_scene="uid://bq5u0drpho201"
 <<<<<<<Updatedupstream<<<<<<<Updatedupstream<<<<<<<Updatedupstreamrun/main_scene="uid://bq5u0drpho201"
@@ -24,6 +28,11 @@ CoinsCollect="*res://collectables/coinsCollect.gd"
 Coins="*res://collectables/coins.gd"
 TileTest="*res://collectables/tile_test.gd"
 Global="*res://Global.gd"
+SilentWolf="*uid://bcn1bt0pjw4dl"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
 
 [global_group]
 
