@@ -13,7 +13,7 @@ func _ready() -> void:
 	"open_scene_on_close": "res://tileTest.tscn"
   	})
 
-var gold: int = 10000:
+var gold: int = 10:
 	set(value):
 		gold = value
 		gold_changed.emit(gold)
